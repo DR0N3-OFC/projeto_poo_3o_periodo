@@ -44,39 +44,40 @@
             this.lblLoginTitle = new System.Windows.Forms.Label();
             this.lblSenhaTitle = new System.Windows.Forms.Label();
             this.lblDataCadastroTitle = new System.Windows.Forms.Label();
+            this.lbNotifications = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(56, 15);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(290, 21);
+            this.tbNome.Size = new System.Drawing.Size(431, 21);
             this.tbNome.TabIndex = 1;
             // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(56, 55);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(290, 21);
+            this.tbEmail.Size = new System.Drawing.Size(431, 21);
             this.tbEmail.TabIndex = 3;
             // 
             // tbLogin
             // 
             this.tbLogin.Location = new System.Drawing.Point(54, 94);
             this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(292, 21);
+            this.tbLogin.Size = new System.Drawing.Size(433, 21);
             this.tbLogin.TabIndex = 5;
             // 
             // tbSenha
             // 
             this.tbSenha.Location = new System.Drawing.Point(54, 133);
             this.tbSenha.Name = "tbSenha";
-            this.tbSenha.Size = new System.Drawing.Size(207, 21);
+            this.tbSenha.Size = new System.Drawing.Size(352, 21);
             this.tbSenha.TabIndex = 7;
             // 
             // btCriarConta
             // 
-            this.btCriarConta.Location = new System.Drawing.Point(271, 131);
+            this.btCriarConta.Location = new System.Drawing.Point(412, 131);
             this.btCriarConta.Name = "btCriarConta";
             this.btCriarConta.Size = new System.Drawing.Size(75, 23);
             this.btCriarConta.TabIndex = 8;
@@ -190,11 +191,21 @@
             this.lblDataCadastroTitle.Text = "Data do cadastro:";
             this.lblDataCadastroTitle.Visible = false;
             // 
+            // lbNotifications
+            // 
+            this.lbNotifications.FormattingEnabled = true;
+            this.lbNotifications.Location = new System.Drawing.Point(257, 176);
+            this.lbNotifications.Name = "lbNotifications";
+            this.lbNotifications.Size = new System.Drawing.Size(230, 82);
+            this.lbNotifications.TabIndex = 20;
+            this.lbNotifications.Visible = false;
+            // 
             // UsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 281);
+            this.ClientSize = new System.Drawing.Size(499, 281);
+            this.Controls.Add(this.lbNotifications);
             this.Controls.Add(this.lblDataCadastroTitle);
             this.Controls.Add(this.lblSenhaTitle);
             this.Controls.Add(this.lblLoginTitle);
@@ -236,5 +247,6 @@
         private Label lblLoginTitle;
         private Label lblSenhaTitle;
         private Label lblDataCadastroTitle;
+        private ListBox lbNotifications;
     }
 }
