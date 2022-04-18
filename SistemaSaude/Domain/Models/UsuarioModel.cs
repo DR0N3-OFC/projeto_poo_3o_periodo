@@ -23,7 +23,7 @@
             } 
         }
         public int  NotificationsCount { get { return _notificationsCount; } }
-        public string[] Notifications { get { return _notifications; } }
+        public IList<String> Notifications { get { return Array.AsReadOnly(_notifications); } }
         public bool IsValid { get { return _notificationsCount == 0; } }
         #endregion
 
@@ -34,14 +34,6 @@
             Email = email;
             Login = login;
             Senha = senha;
-            applyValidations();
-        }
-        #endregion
-
-        #region Accessors Methods
-        public void ChangeName(string? nome)
-        {
-            Nome = nome;
             applyValidations();
         }
         #endregion

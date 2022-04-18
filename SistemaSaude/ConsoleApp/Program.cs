@@ -3,7 +3,6 @@
 
 //UsuarioModel usuario = new UsuarioModel("Bruno", "brunoraphaelfacundo@gmail.com", "bruninho123", "123");
 UsuarioModel usuario = new UsuarioModel(null, null, null, null);
-//usuario.ChangeName(null);
 
 if (usuario.IsValid)
 {

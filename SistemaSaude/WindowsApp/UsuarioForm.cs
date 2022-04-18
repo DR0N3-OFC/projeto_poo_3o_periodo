@@ -47,9 +47,45 @@ namespace WindowsApp
             }
         }
 
+        private void setFormToShow(bool status)
+        {
+            if (status)
+            {
+                if (lbNotifications.Visible)
+                    Height -= (lbNotifications.Height + 30);
+
+                if (lblDados.Visible)
+                    Height -= (lbNotifications.Height + 30);
+
+                Height += (lbNotifications.Height + 30);
+            }
+            else
+            {
+                if (lblDados.Visible)
+                    Height -= (lbNotifications.Height + 30);
+
+                if (lbNotifications.Visible)
+                    Height -= lbNotifications.Height + 30;
+
+                Height += lbNotifications.Height + 30;
+                lbNotifications.Left = 12;
+                lbNotifications.Width = 475;
+
+                lbNotifications.Items.Clear();
+            }
+            lbNotifications.Visible = !status;
+            lblDados.Visible = status;
+            lblLoginTitle.Visible = status;
+            lblLogin.Visible = status;
+            lblSenha.Visible = status;
+            lblSenhaTitle.Visible = status;
+            lblDataCadastro.Visible = status;
+            lblDataCadastroTitle.Visible = status;
+        }
+
         private void dataIsInvalid(UsuarioModel usuario)
         {
-            setInvalidDataVisible();
+            setFormToShow(false);
 
             for (int i = 0; i < usuario.NotificationsCount; i++)
             {
@@ -58,59 +94,15 @@ namespace WindowsApp
             MessageBox.Show("Verifique a inserção de dados e tente novamente!");
         }
 
-        private void setInvalidDataVisible()
-        {
-            if (lblDados.Visible)
-                Height -= (lbNotifications.Height + 30);
-
-            if (lbNotifications.Visible)
-                Height -= lbNotifications.Height + 30;
-
-            lblDados.Visible = false;
-            lblLoginTitle.Visible = false;
-            lblLogin.Visible = false;
-            lblSenha.Visible = false;
-            lblSenhaTitle.Visible = false;
-            lblDataCadastro.Visible = false;
-            lblDataCadastroTitle.Visible = false;
-
-            Height += lbNotifications.Height + 30;
-            lbNotifications.Left = 12;
-            lbNotifications.Width = 475;
-
-            lbNotifications.Items.Clear();
-            lbNotifications.Visible = true;
-        }
-
         private void dataIsValid(UsuarioModel usuario)
         {
-            setValidDataVisible();
+            setFormToShow(true);
 
             lblLogin.Text = usuario.Login;
             lblSenha.Text = usuario.Senha;
             lblDataCadastro.Text = usuario.DataCadastro;
 
             MessageBox.Show("Dados informados corretamente! Verifique-os a seguir.");
-        }
-
-        private void setValidDataVisible()
-        {
-            if (lbNotifications.Visible)
-                Height -= (lbNotifications.Height + 30);
-
-            if (lblDados.Visible)
-                Height -= (lbNotifications.Height + 30);
-
-            Height += (lbNotifications.Height + 30);
-            lbNotifications.Visible = false;
-            lblDados.Visible = true;
-            lblLoginTitle.Visible = true;
-            lblLogin.Visible = true;
-            lblSenha.Visible = true;
-            lblSenhaTitle.Visible = true;
-            lblDataCadastro.Visible = true;
-            lblDataCadastroTitle.Visible = true;
-            
         }
     }
 }
