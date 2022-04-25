@@ -1,55 +1,30 @@
 ﻿namespace Domain.Models
 {
-    public class PessoaModel : UsuarioModel
+    public class MedicoModel : UsuarioModel
     {
         #region Properties
         public string? Nome { get; private set; }
-        public DateTime? DataDeNascimento { get; private set; }
-        public string? DataDeNascimentoTratada { get
-            {
-                return DataDeNascimento?.ToShortDateString();
-            } 
-        }
-        public int? Idade { get 
-            {
-                TimeSpan? timeSpan = (DateTime.Now - DataDeNascimento);
-                return timeSpan?.Days / 365; 
-            } 
-        }
-        public string? Sexo { get; private set; }
         public string? Telefone { get; private set; }
-        public string? Rg { get; private set; }
+        public string? Especialidade { get; private set; }
+        public string? Crm { get; private set; }
         public string? Cpf { get; private set; }
+        public string? Rg { get; private set; }
         public string? EmailPub { get { return Email; } }
         public string? SenhaPub { get { return Senha; } }
         #endregion
 
         #region Constructor
-        public PessoaModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, 
-             string? sexo, string? telefone, string? rg, string? cpf)
+        public MedicoModel
+            (string? email, string? senha, string? nome, string? telefone, string? especialidade, string? crm, string? cpf, string? rg)
         {
             Email = email;
             Senha = senha;
             Nome = nome;
-            DataDeNascimento = dataDeNascimento;
-            Sexo = sexo;
             Telefone = telefone;
-            Rg = rg;
+            Especialidade = especialidade;
+            Crm = crm;
             Cpf = cpf;
-            validateData();
-        }
-        #endregion
-
-        #region Accessors Methods
-        public void ChangePhone(string? telefone)
-        {
-            Telefone = telefone;
-            validateData();
-        }
-        public void ChangeSex(string? sexo)
-        {
-            Sexo = sexo;
+            Rg = rg;
             validateData();
         }
         #endregion
@@ -66,14 +41,14 @@
             if (Nome == null || Nome.Trim().Length == 0)
                 throw new Exception("O nome não pode ser nulo ou vazio");
 
-            if (DataDeNascimento == null)
-                throw new Exception("A data de nascimento não pode ser nula ou vazia");
-
-            if (Sexo == null || Sexo.Trim().Length == 0)
-                Sexo = "Não informado";
-
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";
+
+            if (Especialidade == null || Especialidade.Trim().Length == 0)
+                throw new Exception("A especialidade não pode ser nula ou vazia");
+
+            if (Crm == null || Crm.Trim().Length == 0)
+                throw new Exception("O CRM não pode ser nulo ou vazio");
 
             if (Rg == null || Rg.Trim().Length == 0)
                 throw new Exception("O RG não pode ser nulo ou vazio");
