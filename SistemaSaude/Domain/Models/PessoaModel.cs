@@ -1,10 +1,12 @@
 ﻿namespace Domain.Models
 {
-    public class PessoaModel : UsuarioModel
+    public abstract class PessoaModel
     {
         #region Properties
-        public string? Nome { get; private set; }
-        public DateTime? DataDeNascimento { get; private set; }
+        public string? Email { get; protected set; }
+        public string? Senha { get; protected set; }
+        public string? Nome { get; protected set; }
+        public DateTime? DataDeNascimento { get; protected set; }
         public string? DataDeNascimentoTratada { get
             {
                 return DataDeNascimento?.ToShortDateString();
@@ -16,46 +18,13 @@
                 return timeSpan?.Days / 365; 
             } 
         }
-        public string? Sexo { get; private set; }
-        public string? Telefone { get; private set; }
-        public string? Rg { get; private set; }
-        public string? Cpf { get; private set; }
-        public string? EmailPub { get { return Email; } }
-        public string? SenhaPub { get { return Senha; } }
-        #endregion
-
-        #region Constructor
-        public PessoaModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, 
-             string? sexo, string? telefone, string? rg, string? cpf)
-        {
-            Email = email;
-            Senha = senha;
-            Nome = nome;
-            DataDeNascimento = dataDeNascimento;
-            Sexo = sexo;
-            Telefone = telefone;
-            Rg = rg;
-            Cpf = cpf;
-            validateData();
-        }
-        #endregion
-
-        #region Accessors Methods
-        public void ChangePhone(string? telefone)
-        {
-            Telefone = telefone;
-            validateData();
-        }
-        public void ChangeSex(string? sexo)
-        {
-            Sexo = sexo;
-            validateData();
-        }
+        public string? Telefone { get; protected set; }
+        public string? Rg { get; protected set; }
+        public string? Cpf { get; protected set; }
         #endregion
 
         #region Validations
-        void validateData()
+        protected void ValidateData()
         {
             if (Email == null || Email.Trim().Length == 0)
                 throw new Exception("O e-mail não pode ser nulo ou vazio");
@@ -68,9 +37,6 @@
 
             if (DataDeNascimento == null)
                 throw new Exception("A data de nascimento não pode ser nula ou vazia");
-
-            if (Sexo == null || Sexo.Trim().Length == 0)
-                Sexo = "Não informado";
 
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";
