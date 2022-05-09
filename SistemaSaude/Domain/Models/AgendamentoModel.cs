@@ -1,6 +1,6 @@
 ﻿namespace Domain.Models
 {
-    public class AvaliacaoModel
+    public class AgendamentoModel
     {
     }
 }

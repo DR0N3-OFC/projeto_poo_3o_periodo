@@ -7,6 +7,7 @@
         public string? Senha { get; protected set; }
         public string? Nome { get; protected set; }
         public DateTime? DataDeNascimento { get; protected set; }
+        public Endereco? Endereco { get; protected set; }
         public string? DataDeNascimentoTratada { get
             {
                 return DataDeNascimento?.ToShortDateString();
@@ -37,6 +38,9 @@
 
             if (DataDeNascimento == null)
                 throw new Exception("A data de nascimento não pode ser nula ou vazia");
+
+            if (Endereco == null)
+                throw new Exception("O endereco não pode ser nulo");
 
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";

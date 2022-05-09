@@ -1,6 +1,6 @@
 ﻿namespace Domain.Models
 {
-    public class DuvidaModel
+    public class Duvida
     {
     }
 }

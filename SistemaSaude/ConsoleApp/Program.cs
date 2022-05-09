@@ -36,8 +36,8 @@ if (tipo == "m")
             telefone: "(45) 99878-6543",
             especialidade: "Cardiologista",
             crm: "12345",
-            cpf: "24.841.834-04",
-            rg: "024.893.813-04"
+            cpf: "024.893.813-04",
+            rg: "24.841.834-04"
         );
 
     Console.WriteLine($"O médico {medico.Nome} foi cadastrado com os seguintes dados:");
