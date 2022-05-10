@@ -32,3 +32,4 @@ C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\o
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.pdb
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.genruntimeconfig.cache
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\ref\WindowsApp.dll
+C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.CadastroFormMe.resources

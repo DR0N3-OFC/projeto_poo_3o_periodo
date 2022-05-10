@@ -7,11 +7,12 @@
         public string? Senha { get; protected set; }
         public string? Nome { get; protected set; }
         public DateTime? DataDeNascimento { get; protected set; }
-        public Endereco? Endereco { get; protected set; }
-        public string? DataDeNascimentoTratada { get
+        public string? DataDeNascimentoTratada
+        {
+            get
             {
                 return DataDeNascimento?.ToShortDateString();
-            } 
+            }
         }
         public int? Idade { get 
             {
@@ -19,6 +20,7 @@
                 return timeSpan?.Days / 365; 
             } 
         }
+        public Endereco? Endereco { get; protected set; }
         public string? Telefone { get; protected set; }
         public string? Rg { get; protected set; }
         public string? Cpf { get; protected set; }
