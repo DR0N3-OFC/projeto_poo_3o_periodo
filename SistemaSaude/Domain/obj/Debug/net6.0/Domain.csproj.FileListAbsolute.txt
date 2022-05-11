@@ -34,3 +34,27 @@ C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debu
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.dll
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\ref\Domain.dll
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\ref\Domain.dll
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\ref\Domain.dll
+C:\Users\User\Downloads\Projeto\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.deps.json
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.dll
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\bin\Debug\net6.0\Domain.pdb
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.csproj.AssemblyReference.cache
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.AssemblyInfoInputs.cache
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.AssemblyInfo.cs
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.dll
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\refint\Domain.dll
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\Domain.pdb
+C:\Users\Bruno\Downloads\Projeto UTFPR\projeto_poo_3o_periodo-main\SistemaSaude\Domain\obj\Debug\net6.0\ref\Domain.dll

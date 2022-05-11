@@ -9,13 +9,12 @@
 
         #region Constructor
         public MedicoModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, Endereco? endereco, string? telefone, string? especialidade, string? crm, string? cpf, string? rg) : base()
+            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, string? telefone, string? especialidade, string? crm, string? cpf, string? rg) : base()
         {
             Email = email;
             Senha = senha;
             Nome = nome;
             DataDeNascimento = dataDeNascimento;
-            Endereco = endereco;
             Telefone = telefone;
             Especialidade = especialidade;
             Crm = crm;

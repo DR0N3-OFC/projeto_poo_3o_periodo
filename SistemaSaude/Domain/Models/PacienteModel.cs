@@ -2,6 +2,10 @@
 {
     public class PacienteModel : PessoaModel
     {
+        #region Properties
+        public Endereco? Endereco { get; private set; }
+        #endregion
+
         #region Full Properties
         private IList<Consulta> _consultas;
 

@@ -20,7 +20,6 @@
                 return timeSpan?.Days / 365; 
             } 
         }
-        public Endereco? Endereco { get; protected set; }
         public string? Telefone { get; protected set; }
         public string? Rg { get; protected set; }
         public string? Cpf { get; protected set; }
@@ -40,9 +39,6 @@
 
             if (DataDeNascimento == null)
                 throw new Exception("A data de nascimento não pode ser nula ou vazia");
-
-            if (Endereco == null)
-                throw new Exception("O endereco não pode ser nulo");
 
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";

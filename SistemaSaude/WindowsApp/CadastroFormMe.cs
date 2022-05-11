@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Domain.Models;
 
 namespace WindowsApp
 {
@@ -15,6 +7,28 @@ namespace WindowsApp
         public CadastroFormMe()
         {
             InitializeComponent();
+        }
+
+        private void btCadastrar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedicoModel medico = new(
+                       tbEmail?.Text,
+                       tbSenha?.Text,
+                       tbNome?.Text,
+                       dtDataDeNascimento?.Value,
+                       tbTelefone?.Text,
+                       tbEspecialidade?.Text,
+                       tbCRM?.Text,
+                       tbCPF?.Text,
+                       tbRG?.Text
+                       );
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"{ex.Message}");
+            }
         }
     }
 }
