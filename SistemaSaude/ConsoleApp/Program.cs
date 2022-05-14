@@ -1,13 +1,14 @@
 ﻿
-using Domain.Enumerators;
 using Domain.Models;
+using Persistence.DataContext;
 
-var remedio = new Remedio("Ibuprofeno", TipoRemedio.Antiinflamatorio, new DateTime(2024, 07, 19));
-var remedio2 = new Remedio("Gabapentina", TipoRemedio.Antidepressivo, new DateTime(2027, 03, 15));
+var context = new EFDataContext();
+IList<PacienteModel> pacientes = context.Pacientes.ToList();
 
-var reserva1 = new ReservaModel();
-
-reserva1.adicionarRemedio(remedio);
-reserva1.adicionarRemedio(remedio2);
+foreach (var e in pacientes)
+{
+    Console.WriteLine($"Paciente:{e.Nome}");
+}
+Console.WriteLine("Recuperação finalizada");
 
 Console.ReadKey();

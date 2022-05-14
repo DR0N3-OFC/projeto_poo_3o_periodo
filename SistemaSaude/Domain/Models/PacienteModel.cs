@@ -1,8 +1,13 @@
-﻿namespace Domain.Models
+﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Models
 {
+    [Table("TB_Pacientes")]
     public class PacienteModel : PessoaModel
     {
         #region Properties
+        public Guid? PacienteModelID { get; private set; }
         public Endereco? Endereco { get; private set; }
         #endregion
 
@@ -17,18 +22,34 @@
 
         #region Constructor
         public PacienteModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, Endereco? endereco, string? telefone, string? cpf, string? rg) : base()
+            (string? email, string? senha, string? nome, DateTime? dataDeNascimento,  string? telefone, string? cpf, string? rg, Guid? pacienteModelID = null) : base()
         {
+            PacienteModelID = (pacienteModelID == null) ? Guid.NewGuid() : pacienteModelID;
             Email = email;
             Senha = senha;
             Nome = nome;
             DataDeNascimento = dataDeNascimento;
-            Endereco = endereco;
             Telefone = telefone;
             Cpf = cpf;
             Rg = rg;
             _consultas = new List<Consulta>();
             ValidateData();
+        }
+        #endregion
+
+        #region Overrides
+        public override bool Equals(object? obj)
+        {
+            if (obj is not PacienteModel) return false;
+
+            if (((PacienteModel)obj).PacienteModelID.Equals(PacienteModelID)) return true;
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return 11 * (PacienteModelID == null ? 1 : PacienteModelID.GetHashCode());
         }
         #endregion
     }

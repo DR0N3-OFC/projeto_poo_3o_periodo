@@ -1,8 +1,12 @@
-﻿namespace Domain.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Models
 {
+    [Table("TB_Enderecos")]
     public class Endereco
     {
         #region Properties
+        public Guid? EnderecoID { get; private set; }
         public string? Rua { get; private set; }
         public string? Numero { get; private set; }
         public string? Bairro { get; private set; }
@@ -12,8 +16,9 @@
         #endregion
 
         #region Constructor
-        public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep)
+        public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep, Guid? enderecoID = null)
         {
+            EnderecoID = (enderecoID == null) ? Guid.NewGuid() : enderecoID;
             Rua = rua;
             Numero = numero;
             Bairro = bairro;
@@ -44,6 +49,22 @@
 
             if (Cep == null || Cep.Trim().Length == 0)
                 throw new Exception("O CEP não pode ser nulo ou vazio");
+        }
+        #endregion
+
+        #region Overrides
+        public override bool Equals(object? obj)
+        {
+            if (obj is not Endereco) return false;
+
+            if (((Endereco)obj).EnderecoID.Equals(EnderecoID)) return true;
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return 11 * (EnderecoID == null ? 1 : EnderecoID.GetHashCode());
         }
         #endregion
     }
