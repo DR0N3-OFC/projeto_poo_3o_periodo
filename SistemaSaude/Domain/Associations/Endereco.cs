@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace Domain.Models
 {
-    [Table("TB_Enderecos")]
     public class Endereco
     {
         #region Properties
@@ -16,9 +14,8 @@ namespace Domain.Models
         #endregion
 
         #region Constructor
-        public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep, Guid? enderecoID = null)
+        public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep)
         {
-            EnderecoID = (enderecoID == null) ? Guid.NewGuid() : enderecoID;
             Rua = rua;
             Numero = numero;
             Bairro = bairro;
@@ -26,6 +23,13 @@ namespace Domain.Models
             Estado = estado;
             Cep = cep;
             ValidateData();
+        }
+        #endregion
+
+        #region Methods
+        public void GerarID()
+        {
+            EnderecoID = Guid.NewGuid();
         }
         #endregion
 

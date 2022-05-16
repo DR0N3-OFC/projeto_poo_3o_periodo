@@ -1,9 +1,6 @@
 ﻿
-using System.ComponentModel.DataAnnotations.Schema;
-
 namespace Domain.Models
 {
-    [Table("TB_Pacientes")]
     public class PacienteModel : PessoaModel
     {
         #region Properties
@@ -22,9 +19,8 @@ namespace Domain.Models
 
         #region Constructor
         public PacienteModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento,  string? telefone, string? cpf, string? rg, Guid? pacienteModelID = null) : base()
+            (string? email, string? senha, string? nome, DateTime? dataDeNascimento,  string? telefone, string? cpf, string? rg) : base()
         {
-            PacienteModelID = (pacienteModelID == null) ? Guid.NewGuid() : pacienteModelID;
             Email = email;
             Senha = senha;
             Nome = nome;
@@ -34,6 +30,13 @@ namespace Domain.Models
             Rg = rg;
             _consultas = new List<Consulta>();
             ValidateData();
+        }
+        #endregion
+
+        #region Methods
+        public void GerarID()
+        {
+            PacienteModelID = Guid.NewGuid();
         }
         #endregion
 

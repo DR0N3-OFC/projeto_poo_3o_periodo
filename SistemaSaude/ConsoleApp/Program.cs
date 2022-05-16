@@ -1,9 +1,10 @@
 ﻿
 using Domain.Models;
 using Persistence.DataContext;
+using Persistence.Repository;
 
-var context = new EFDataContext();
-IList<PacienteModel> pacientes = context.Pacientes.ToList();
+var pacienteModelRepository = new PacienteModelRepository(new EFDataContext());
+IReadOnlyCollection<PacienteModel>? pacientes = pacienteModelRepository.ObterTodos();
 
 foreach (var e in pacientes)
 {

@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 using Persistence.DataContext;
 
 namespace Persistence.Repository
@@ -13,7 +14,17 @@ namespace Persistence.Repository
         }
         public PacienteModel Gravar(PacienteModel t)
         {
-            throw new NotImplementedException();
+            if (t.PacienteModelID == null)
+            {
+                t.GerarID();
+                _context.Pacientes?.Add(t);
+            }
+            else
+            {
+                _context.Update(t);
+            }
+            _context.SaveChanges();
+            return t;
         }
 
         public PacienteModel ObterPorID(Guid? id)
@@ -23,7 +34,7 @@ namespace Persistence.Repository
 
         public IReadOnlyCollection<PacienteModel> ObterTodos()
         {
-            throw new NotImplementedException();
+            return _context.Pacientes.AsNoTracking().OrderBy(e => e.Nome).ToList().AsReadOnly();
         }
 
         public void Remover(PacienteModel t)

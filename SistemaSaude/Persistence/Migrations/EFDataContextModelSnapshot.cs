@@ -73,7 +73,7 @@ namespace Persistence.Migrations
 
                     b.HasKey("EnderecoID");
 
-                    b.ToTable("TB_Enderecos");
+                    b.ToTable("TB_Enderecos", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
@@ -110,7 +110,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("EnderecoID");
 
-                    b.ToTable("TB_Pacientes");
+                    b.ToTable("TB_Pacientes", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Consulta", b =>
@@ -123,10 +123,15 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
                 {
                     b.HasOne("Domain.Models.Endereco", "Endereco")
-                        .WithMany()
+                        .WithMany("Pacientes")
                         .HasForeignKey("EnderecoID");
 
                     b.Navigation("Endereco");
+                });
+
+            modelBuilder.Entity("Domain.Models.Endereco", b =>
+                {
+                    b.Navigation("Pacientes");
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>

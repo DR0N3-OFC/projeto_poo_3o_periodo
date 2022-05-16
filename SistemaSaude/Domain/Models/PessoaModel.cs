@@ -7,13 +7,6 @@
         public string? Senha { get; protected set; }
         public string? Nome { get; protected set; }
         public DateTime? DataDeNascimento { get; protected set; }
-        public string? DataDeNascimentoTratada
-        {
-            get
-            {
-                return DataDeNascimento?.ToShortDateString();
-            }
-        }
         public int? Idade { get 
             {
                 TimeSpan? timeSpan = (DateTime.Now - DataDeNascimento);
@@ -23,6 +16,13 @@
         public string? Telefone { get; protected set; }
         public string? Rg { get; protected set; }
         public string? Cpf { get; protected set; }
+        #endregion
+
+        #region Methods
+        protected void AtualizarTelefone(string telefone)
+        {
+            Telefone = telefone;
+        }
         #endregion
 
         #region Validations
@@ -37,8 +37,8 @@
             if (Nome == null || Nome.Trim().Length == 0)
                 throw new Exception("O nome não pode ser nulo ou vazio");
 
-            if (DataDeNascimento == null)
-                throw new Exception("A data de nascimento não pode ser nula ou vazia");
+            if ((DataDeNascimento?.Date >= DateTime.Now.Date))
+                throw new Exception("A data de nascimento não pode ser igual a data atual");
 
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";
