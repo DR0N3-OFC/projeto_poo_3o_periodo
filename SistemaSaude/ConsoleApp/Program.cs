@@ -8,7 +8,7 @@ IReadOnlyCollection<PacienteModel>? pacientes = pacienteModelRepository.ObterTod
 
 foreach (var e in pacientes)
 {
-    Console.WriteLine($"Paciente:{e.Nome}");
+    Console.WriteLine($"Paciente:{e.Nome} - {e.Endereco?.Cidade}");
 }
 Console.WriteLine("Recuperação finalizada");
 

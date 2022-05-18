@@ -44,16 +44,10 @@ namespace WindowsApp
                        tbCPF?.Text.Trim(),
                        tbRG?.Text.Trim()
                        );
-                Endereco endereco = new(
-                    tbRua?.Text.Trim(),
-                    tbNumero?.Text.Trim(),
-                    tbBairro?.Text.Trim(),
-                    tbCidade?.Text.Trim(),
-                    tbEstado?.Text.Trim(),
-                    tbCEP?.Text.Trim());
 
                 _pacienteModelRepository.Gravar(paciente);
-                _enderecoRepository.Gravar(endereco);
+
+                _enderecoRepository.Gravar(new Endereco(tbRua?.Text.Trim(), tbNumero?.Text.Trim(), tbBairro?.Text.Trim(), tbCidade?.Text.Trim(), tbEstado?.Text.Trim(), tbCEP?.Text.Trim(), paciente.PacienteModelID));
                 MessageBox.Show("Cadastro realizado com êxito!", "Cadastro realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)

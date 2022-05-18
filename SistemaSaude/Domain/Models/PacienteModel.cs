@@ -1,9 +1,12 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+
 namespace Domain.Models
 {
     public class PacienteModel : PessoaModel
     {
         #region Properties
+        [Key]
         public Guid? PacienteModelID { get; private set; }
         public Endereco? Endereco { get; private set; }
         #endregion

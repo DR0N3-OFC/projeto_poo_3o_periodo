@@ -68,12 +68,57 @@ namespace Persistence.Migrations
                     b.Property<string>("Numero")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("PacienteModelID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Rua")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EnderecoID");
 
+                    b.HasIndex("PacienteModelID")
+                        .IsUnique()
+                        .HasFilter("[PacienteModelID] IS NOT NULL");
+
                     b.ToTable("TB_Enderecos", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.MedicoModel", b =>
+                {
+                    b.Property<Guid?>("MedicoModelID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cpf")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Crm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DataDeNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Especialidade")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MedicoModelID");
+
+                    b.ToTable("TB_Medicos", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
@@ -91,9 +136,6 @@ namespace Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("EnderecoID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
@@ -108,8 +150,6 @@ namespace Persistence.Migrations
 
                     b.HasKey("PacienteModelID");
 
-                    b.HasIndex("EnderecoID");
-
                     b.ToTable("TB_Pacientes", (string)null);
                 });
 
@@ -120,23 +160,20 @@ namespace Persistence.Migrations
                         .HasForeignKey("PacienteModelID");
                 });
 
-            modelBuilder.Entity("Domain.Models.PacienteModel", b =>
-                {
-                    b.HasOne("Domain.Models.Endereco", "Endereco")
-                        .WithMany("Pacientes")
-                        .HasForeignKey("EnderecoID");
-
-                    b.Navigation("Endereco");
-                });
-
             modelBuilder.Entity("Domain.Models.Endereco", b =>
                 {
-                    b.Navigation("Pacientes");
+                    b.HasOne("Domain.Models.PacienteModel", "Paciente")
+                        .WithOne("Endereco")
+                        .HasForeignKey("Domain.Models.Endereco", "PacienteModelID");
+
+                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
                 {
                     b.Navigation("Consultas");
+
+                    b.Navigation("Endereco");
                 });
 #pragma warning restore 612, 618
         }

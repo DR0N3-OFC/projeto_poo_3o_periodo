@@ -1,10 +1,17 @@
 ﻿
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Domain.Models
 {
     public class Endereco
     {
         #region Properties
+        [Key]
         public Guid? EnderecoID { get; private set; }
+        [ForeignKey("FK_TB_Pacientes_TB_Enderecos_EnderecoID")]
+        public Guid? PacienteModelID { get; private set; }
+        public virtual PacienteModel? Paciente { get; private set; }
         public string? Rua { get; private set; }
         public string? Numero { get; private set; }
         public string? Bairro { get; private set; }
@@ -13,7 +20,7 @@ namespace Domain.Models
         public string? Cep { get; private set; }
         #endregion
 
-        #region Constructor
+        #region Constructors
         public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep)
         {
             Rua = rua;
@@ -23,6 +30,10 @@ namespace Domain.Models
             Estado = estado;
             Cep = cep;
             ValidateData();
+        }
+        public Endereco(string? rua, string? numero, string? bairro, string? cidade, string? estado, string? cep, Guid? pacienteModelID) : this(rua, numero, bairro, cidade, estado, cep)
+        {
+            PacienteModelID = pacienteModelID;
         }
         #endregion
 

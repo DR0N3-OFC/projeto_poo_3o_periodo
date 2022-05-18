@@ -7,10 +7,12 @@ namespace Persistence.DataContext
     {
         public DbSet<PacienteModel>? Pacientes { get; set; }
         public DbSet<Endereco>? Enderecos { get; set; }
+        public DbSet<MedicoModel>? Medicos { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<PacienteModel>().ToTable("TB_Pacientes");
+            modelBuilder.Entity<MedicoModel>().ToTable("TB_Medicos");
             modelBuilder.Entity<Endereco>().ToTable("TB_Enderecos");
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

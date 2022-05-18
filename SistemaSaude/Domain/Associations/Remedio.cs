@@ -7,12 +7,12 @@ namespace Domain.Models
         #region Properties
         public Guid? RemedioID { get; private set; }
         public string? Nome { get; private set; }
-        public TipoRemedio? Tipo { get; private set; }
+        public EnumRemedio? Tipo { get; private set; }
         public DateTime? Validade { get; private set; }
         #endregion
 
         #region Constructor
-        public Remedio(string? nome, TipoRemedio? tipo, DateTime? validade, Guid? remedioID = null)
+        public Remedio(string? nome, EnumRemedio? tipo, DateTime? validade, Guid? remedioID = null)
         {
             RemedioID = (remedioID == null) ? Guid.NewGuid() : remedioID;
             Nome = nome;

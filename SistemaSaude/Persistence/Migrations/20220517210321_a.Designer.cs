@@ -12,8 +12,8 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20220516065919_tche")]
-    partial class tche
+    [Migration("20220517210321_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -70,10 +70,15 @@ namespace Persistence.Migrations
                     b.Property<string>("Numero")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid?>("PacienteModelID")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Rua")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("EnderecoID");
+
+                    b.HasIndex("PacienteModelID");
 
                     b.ToTable("TB_Enderecos", (string)null);
                 });
@@ -93,9 +98,6 @@ namespace Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid?>("EnderecoID")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
@@ -110,8 +112,6 @@ namespace Persistence.Migrations
 
                     b.HasKey("PacienteModelID");
 
-                    b.HasIndex("EnderecoID");
-
                     b.ToTable("TB_Pacientes", (string)null);
                 });
 
@@ -122,18 +122,13 @@ namespace Persistence.Migrations
                         .HasForeignKey("PacienteModelID");
                 });
 
-            modelBuilder.Entity("Domain.Models.PacienteModel", b =>
-                {
-                    b.HasOne("Domain.Models.Endereco", "Endereco")
-                        .WithMany("Pacientes")
-                        .HasForeignKey("EnderecoID");
-
-                    b.Navigation("Endereco");
-                });
-
             modelBuilder.Entity("Domain.Models.Endereco", b =>
                 {
-                    b.Navigation("Pacientes");
+                    b.HasOne("Domain.Models.PacienteModel", "Paciente")
+                        .WithMany()
+                        .HasForeignKey("PacienteModelID");
+
+                    b.Navigation("Paciente");
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>

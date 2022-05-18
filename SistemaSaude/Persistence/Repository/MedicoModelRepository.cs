@@ -1,23 +1,22 @@
 ﻿using Domain.Models;
 using Domain.Repository;
-using Microsoft.EntityFrameworkCore;
 using Persistence.DataContext;
 
 namespace Persistence.Repository
 {
-    public class PacienteModelRepository : IRepository<PacienteModel>
+    public class MedicoModelRepository : IRepository<MedicoModel>
     {
         private readonly EFDataContext _context;
-        public PacienteModelRepository(EFDataContext context)
+        public MedicoModelRepository(EFDataContext context)
         {
             _context = context;
         }
-        public PacienteModel Gravar(PacienteModel t)
+        public MedicoModel Gravar(MedicoModel t)
         {
-            if (t.PacienteModelID == null)
+            if (t.MedicoModelID == null)
             {
                 t.GerarID();
-                _context.Pacientes?.Add(t);
+                _context.Medicos?.Add(t);
             }
             else
             {
@@ -27,17 +26,17 @@ namespace Persistence.Repository
             return t;
         }
 
-        public PacienteModel ObterPorID(Guid? id)
+        public MedicoModel ObterPorID(Guid? id)
         {
             throw new NotImplementedException();
         }
 
-        public IReadOnlyCollection<PacienteModel> ObterTodos()
+        public IReadOnlyCollection<MedicoModel> ObterTodos()
         {
-            return _context.Pacientes.AsNoTracking().Include(e => e.Endereco).OrderBy(p => p.Nome).ToList().AsReadOnly();
+            throw new NotImplementedException();
         }
 
-        public void Remover(PacienteModel t)
+        public void Remover(MedicoModel t)
         {
             throw new NotImplementedException();
         }

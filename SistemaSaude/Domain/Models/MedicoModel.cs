@@ -1,15 +1,20 @@
-﻿namespace Domain.Models
+﻿using Domain.Enumerators;
+using System.ComponentModel.DataAnnotations;
+
+namespace Domain.Models
 {
     public class MedicoModel : PessoaModel
     {
         #region Properties
-        public string? Especialidade { get; private set; }
+        [Key]
+        public Guid? MedicoModelID { get; private set; }
+        public EnumEspecialidade? Especialidade { get; private set; }
         public string? Crm { get; private set; }
         #endregion
 
         #region Constructor
         public MedicoModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, string? telefone, string? especialidade, string? crm, string? cpf, string? rg) : base()
+            (string? email, string? senha, string? nome, DateTime? dataDeNascimento, string? telefone, EnumEspecialidade? especialidade, string? crm, string? cpf, string? rg) : base()
         {
             Email = email;
             Senha = senha;
@@ -25,10 +30,17 @@
         }
         #endregion
 
+        #region Methods
+        public void GerarID()
+        {
+            MedicoModelID = Guid.NewGuid();
+        }
+        #endregion
+
         #region Validations
         void ValidateDataMedico()
         {
-            if (Especialidade == null || Especialidade.Trim().Length == 0)
+            if (Especialidade == null)
                 throw new Exception("A especialidade não pode ser nula ou vazia");
 
             if (Crm == null || Crm.Trim().Length == 0)
