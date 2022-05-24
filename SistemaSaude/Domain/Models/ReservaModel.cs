@@ -17,10 +17,12 @@
         }
         #endregion
 
+        #region Methods
         public void adicionarRemedio(Remedio remedio)
         {
             _remedios?.Add(remedio);
         }
+        #endregion
 
         #region Overrides
         public override bool Equals(object? obj)

@@ -101,8 +101,8 @@ namespace Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Especialidade")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Especialidade")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");

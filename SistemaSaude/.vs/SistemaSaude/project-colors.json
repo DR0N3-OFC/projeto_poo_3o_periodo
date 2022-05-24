@@ -10,7 +10,17 @@
       "ProjectGuid": "0ccc7863-5ca1-40b1-a5dc-cb8ce12a2702",
       "DisplayName": "WindowsApp",
       "ColorIndex": 1
+    },
+    "0ceb4f4a-1388-4a8d-bbc1-cb88982505f3": {
+      "ProjectGuid": "0ceb4f4a-1388-4a8d-bbc1-cb88982505f3",
+      "DisplayName": "Persistence",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }

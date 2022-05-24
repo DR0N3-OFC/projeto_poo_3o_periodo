@@ -12,8 +12,8 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20220518030852_b")]
-    partial class b
+    [Migration("20220524030235_CreateDB")]
+    partial class CreateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -91,6 +91,9 @@ namespace Persistence.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<int>("AccountType")
+                        .HasColumnType("int");
+
                     b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");
 
@@ -103,8 +106,8 @@ namespace Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Especialidade")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("Especialidade")
+                        .HasColumnType("int");
 
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
@@ -128,6 +131,9 @@ namespace Persistence.Migrations
                     b.Property<Guid?>("PacienteModelID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("AccountType")
+                        .HasColumnType("int");
 
                     b.Property<string>("Cpf")
                         .HasColumnType("nvarchar(max)");

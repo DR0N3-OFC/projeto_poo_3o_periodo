@@ -12,8 +12,8 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20220517210321_a")]
-    partial class a
+    [Migration("20220524033657_NoATDBUpdate")]
+    partial class NoATDBUpdate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -78,9 +78,49 @@ namespace Persistence.Migrations
 
                     b.HasKey("EnderecoID");
 
-                    b.HasIndex("PacienteModelID");
+                    b.HasIndex("PacienteModelID")
+                        .IsUnique()
+                        .HasFilter("[PacienteModelID] IS NOT NULL");
 
                     b.ToTable("TB_Enderecos", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.MedicoModel", b =>
+                {
+                    b.Property<Guid?>("MedicoModelID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Cpf")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Crm")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DataDeNascimento")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Especialidade")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Rg")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Senha")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefone")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("MedicoModelID");
+
+                    b.ToTable("TB_Medicos", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
@@ -125,8 +165,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Models.Endereco", b =>
                 {
                     b.HasOne("Domain.Models.PacienteModel", "Paciente")
-                        .WithMany()
-                        .HasForeignKey("PacienteModelID");
+                        .WithOne("Endereco")
+                        .HasForeignKey("Domain.Models.Endereco", "PacienteModelID");
 
                     b.Navigation("Paciente");
                 });
@@ -134,6 +174,8 @@ namespace Persistence.Migrations
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>
                 {
                     b.Navigation("Consultas");
+
+                    b.Navigation("Endereco");
                 });
 #pragma warning restore 612, 618
         }
