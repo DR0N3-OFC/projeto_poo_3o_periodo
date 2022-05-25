@@ -100,5 +100,12 @@ namespace WindowsApp
             else tbCEP.BackColor = Color.White;
             #endregion
         }
+
+        private void CadastroFormPa_Deactivate(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            login.Activate();
+        }
     }
 }

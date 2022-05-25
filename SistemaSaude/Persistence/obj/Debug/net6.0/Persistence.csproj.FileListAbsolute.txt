@@ -31,4 +31,4 @@ C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\obj
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\obj\Debug\net6.0\Persistence.pdb
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\obj\Debug\net6.0\Persistence.genruntimeconfig.cache
 C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\obj\Debug\net6.0\ref\Persistence.dll
-C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\obj\Debug\net6.0\refint\Persistence.dll
+C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\Persistence\bin\Debug\net6.0\ref\Persistence.dll

@@ -94,5 +94,12 @@ namespace WindowsApp
             else tbCRM.BackColor = Color.White;
             #endregion
         }
+
+        private void CadastroFormMe_Deactivate(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            login.Activate();
+        }
     }
 }
