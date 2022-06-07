@@ -7,6 +7,7 @@ namespace WindowsApp
 {
     public partial class CadastroFormPa : Form
     {
+        LoginForm login = new LoginForm();
         private readonly IRepository<PacienteModel> _pacienteModelRepository;
         private readonly IRepository<Endereco> _enderecoRepository;
         public CadastroFormPa()
@@ -20,6 +21,7 @@ namespace WindowsApp
 
         private void initialFormatting()
         {
+            lblTitulo.Select();
             lblTitulo.Left = (Width - lblTitulo.Width) / 2;
             lblDados1.Left = (Width - lblDados1.Width) / 2;
             lblDados2.Left = (Width - lblDados2.Width) / 2;
@@ -49,12 +51,20 @@ namespace WindowsApp
 
                 _enderecoRepository.Gravar(new Endereco(tbRua?.Text.Trim(), tbNumero?.Text.Trim(), tbBairro?.Text.Trim(), tbCidade?.Text.Trim(), tbEstado?.Text.Trim(), tbCEP?.Text.Trim(), paciente.PacienteModelID));
                 MessageBox.Show("Cadastro realizado com êxito!", "Cadastro realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                closeForm();
             }
             catch (Exception)
             {
                 InCaseOfExceptionStyle();
                 MessageBox.Show("Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void closeForm()
+        {
+            login.SendToBack();
+            login.Hide();
+            Close();
         }
 
         private void InCaseOfExceptionStyle()
@@ -103,7 +113,6 @@ namespace WindowsApp
 
         private void CadastroFormPa_Deactivate(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
             login.Show();
             login.Activate();
         }

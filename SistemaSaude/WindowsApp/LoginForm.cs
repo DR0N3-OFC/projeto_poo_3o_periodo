@@ -11,6 +11,7 @@ namespace WindowsApp
         public LoginForm()
         {
             InitializeComponent();
+            lblTitulo.Select();
         }
 
         private void btEntrar_Click(object sender, EventArgs e)
@@ -49,15 +50,15 @@ namespace WindowsApp
         {
             if (usuario == null)
             {
-                MessageBox.Show("Usuário não foi encontrado.");
+                MessageBox.Show("Usuário não foi encontrado.", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (usuario != null && usuario.Senha != tbSenha.Text)
             {
-                MessageBox.Show("Senha incorreta.");
+                MessageBox.Show("Senha incorreta.", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (usuario.Senha == tbSenha.Text)
             {
-                MessageBox.Show("Dados Corretos.");
+                MessageBox.Show("Dados Corretos.", "Bem-vindo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -65,7 +66,7 @@ namespace WindowsApp
         {
             if (tbEmail.Text.Trim() == String.Empty && tbSenha.Text.Trim() == String.Empty)
             {
-                MessageBox.Show("E-mail e senha não foram informados.", "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception("E-mail e senha não foram informados.");
             }
             else if (tbEmail.Text.Trim() == String.Empty)
             {

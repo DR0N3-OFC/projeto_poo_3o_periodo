@@ -206,7 +206,7 @@
             this.label9.Location = new System.Drawing.Point(412, 219);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 15);
+            this.label9.Size = new System.Drawing.Size(51, 15);
             this.label9.TabIndex = 16;
             this.label9.Text = "Telefone";
             // 

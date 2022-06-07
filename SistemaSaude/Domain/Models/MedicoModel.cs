@@ -10,6 +10,7 @@ namespace Domain.Models
         public Guid? MedicoModelID { get; private set; }
         public EnumEspecialidade? Especialidade { get; private set; }
         public string? Crm { get; private set; }
+        public virtual IList<Consulta>? Consultas { get; private set; }
         #endregion
 
         #region Constructor

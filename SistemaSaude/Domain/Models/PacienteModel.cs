@@ -9,20 +9,11 @@ namespace Domain.Models
         [Key]
         public Guid? PacienteModelID { get; private set; }
         public Endereco? Endereco { get; private set; }
-        #endregion
-
-        #region Full Properties
-        private IList<Consulta> _consultas;
-
-        public IReadOnlyCollection<Consulta> Consultas
-        {
-            get { return (IReadOnlyCollection<Consulta>)_consultas; }
-        }
+        public virtual IList<Consulta>? Consultas { get; private set; }
         #endregion
 
         #region Constructor
-        public PacienteModel
-            (string? email, string? senha, string? nome, DateTime? dataDeNascimento,  string? telefone, string? cpf, string? rg) : base()
+        public PacienteModel (string? email, string? senha, string? nome, DateTime? dataDeNascimento, string? telefone, string? cpf, string? rg) : base()
         {
             Email = email;
             Senha = senha;
@@ -31,7 +22,6 @@ namespace Domain.Models
             Telefone = telefone;
             Cpf = cpf;
             Rg = rg;
-            _consultas = new List<Consulta>();
             ValidateData();
         }
         #endregion

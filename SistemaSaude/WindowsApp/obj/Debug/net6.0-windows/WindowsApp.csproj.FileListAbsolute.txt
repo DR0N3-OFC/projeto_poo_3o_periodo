@@ -151,3 +151,4 @@ C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.AgendamentoForm.resources
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.TipoConta.resources
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.Properties.Resources.resources
+C:\Users\User\Downloads\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.Properties.Resources.resources

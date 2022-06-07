@@ -8,6 +8,7 @@ namespace WindowsApp
 {
     public partial class CadastroFormMe : Form
     {
+        LoginForm login = new LoginForm();
         private readonly IRepository<MedicoModel> _medicoModelRepository;
         public CadastroFormMe()
         {
@@ -19,6 +20,7 @@ namespace WindowsApp
         }
         private void initialFormatting()
         {
+            lblTitulo.Select();
             lblTitulo.Left = (Width - lblTitulo.Width) / 2;
             lblDados1.Left = (Width - lblDados1.Width) / 2;
             lblDados2.Left = (Width - lblDados2.Width) / 2;
@@ -57,12 +59,20 @@ namespace WindowsApp
 
                 _medicoModelRepository.Gravar(medico);
                 MessageBox.Show("Cadastro realizado com êxito!", "Cadastro realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                closeForm();
             }
             catch (Exception)
             {
                 InCaseOfExceptionStyle();
                 MessageBox.Show("Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void closeForm()
+        {
+            login.SendToBack();
+            login.Hide();
+            Close();
         }
 
         private void InCaseOfExceptionStyle()
@@ -97,7 +107,6 @@ namespace WindowsApp
 
         private void CadastroFormMe_Deactivate(object sender, EventArgs e)
         {
-            LoginForm login = new LoginForm();
             login.Show();
             login.Activate();
         }

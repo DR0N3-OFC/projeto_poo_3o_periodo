@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.DataContext;
 
@@ -11,9 +12,10 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    partial class EFDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220606005353_AddConsultasTable")]
+    partial class AddConsultasTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,15 +36,13 @@ namespace Persistence.Migrations
                     b.Property<int?>("Especialidade")
                         .HasColumnType("int");
 
-                    b.Property<Guid?>("MedicoModelID")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Medico")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid?>("PacienteModelID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("ConsultaID");
-
-                    b.HasIndex("MedicoModelID");
 
                     b.HasIndex("PacienteModelID");
 
@@ -157,15 +157,9 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Models.Consulta", b =>
                 {
-                    b.HasOne("Domain.Models.MedicoModel", "Medico")
-                        .WithMany("Consultas")
-                        .HasForeignKey("MedicoModelID");
-
                     b.HasOne("Domain.Models.PacienteModel", "Paciente")
                         .WithMany("Consultas")
                         .HasForeignKey("PacienteModelID");
-
-                    b.Navigation("Medico");
 
                     b.Navigation("Paciente");
                 });
@@ -177,11 +171,6 @@ namespace Persistence.Migrations
                         .HasForeignKey("Domain.Models.Endereco", "PacienteModelID");
 
                     b.Navigation("Paciente");
-                });
-
-            modelBuilder.Entity("Domain.Models.MedicoModel", b =>
-                {
-                    b.Navigation("Consultas");
                 });
 
             modelBuilder.Entity("Domain.Models.PacienteModel", b =>

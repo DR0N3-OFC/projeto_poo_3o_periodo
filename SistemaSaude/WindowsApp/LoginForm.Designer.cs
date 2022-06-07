@@ -37,7 +37,7 @@
             this.lblCriarConta = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btCriarConta = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblTitulo = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -45,7 +45,7 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(340, 80);
+            this.lblEmail.Location = new System.Drawing.Point(291, 69);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(41, 15);
             this.lblEmail.TabIndex = 0;
@@ -53,22 +53,24 @@
             // 
             // tbEmail
             // 
-            this.tbEmail.Location = new System.Drawing.Point(360, 107);
+            this.tbEmail.Location = new System.Drawing.Point(309, 93);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(228, 23);
+            this.tbEmail.PlaceholderText = "Seu e-mail";
+            this.tbEmail.Size = new System.Drawing.Size(196, 23);
             this.tbEmail.TabIndex = 1;
             // 
             // tbSenha
             // 
-            this.tbSenha.Location = new System.Drawing.Point(360, 182);
+            this.tbSenha.Location = new System.Drawing.Point(309, 158);
             this.tbSenha.Name = "tbSenha";
-            this.tbSenha.Size = new System.Drawing.Size(228, 23);
+            this.tbSenha.PlaceholderText = "Sua senha";
+            this.tbSenha.Size = new System.Drawing.Size(196, 23);
             this.tbSenha.TabIndex = 3;
             // 
             // lblSenha
             // 
             this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(340, 155);
+            this.lblSenha.Location = new System.Drawing.Point(291, 134);
             this.lblSenha.Name = "lblSenha";
             this.lblSenha.Size = new System.Drawing.Size(39, 15);
             this.lblSenha.TabIndex = 2;
@@ -76,9 +78,9 @@
             // 
             // btEntrar
             // 
-            this.btEntrar.Location = new System.Drawing.Point(513, 229);
+            this.btEntrar.Location = new System.Drawing.Point(440, 198);
             this.btEntrar.Name = "btEntrar";
-            this.btEntrar.Size = new System.Drawing.Size(75, 23);
+            this.btEntrar.Size = new System.Drawing.Size(64, 20);
             this.btEntrar.TabIndex = 4;
             this.btEntrar.Text = "Entrar";
             this.btEntrar.UseVisualStyleBackColor = true;
@@ -87,7 +89,7 @@
             // cbSouMedico
             // 
             this.cbSouMedico.AutoSize = true;
-            this.cbSouMedico.Location = new System.Drawing.Point(360, 232);
+            this.cbSouMedico.Location = new System.Drawing.Point(309, 201);
             this.cbSouMedico.Name = "cbSouMedico";
             this.cbSouMedico.Size = new System.Drawing.Size(89, 19);
             this.cbSouMedico.TabIndex = 5;
@@ -98,7 +100,7 @@
             // 
             this.lblCriarConta.AutoSize = true;
             this.lblCriarConta.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblCriarConta.Location = new System.Drawing.Point(45, 114);
+            this.lblCriarConta.Location = new System.Drawing.Point(39, 99);
             this.lblCriarConta.Name = "lblCriarConta";
             this.lblCriarConta.Size = new System.Drawing.Size(214, 20);
             this.lblCriarConta.TabIndex = 6;
@@ -108,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(30, 151);
+            this.label1.Location = new System.Drawing.Point(26, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(245, 20);
             this.label1.TabIndex = 7;
@@ -117,40 +119,40 @@
             // btCriarConta
             // 
             this.btCriarConta.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btCriarConta.Location = new System.Drawing.Point(108, 187);
+            this.btCriarConta.Location = new System.Drawing.Point(93, 162);
             this.btCriarConta.Name = "btCriarConta";
-            this.btCriarConta.Size = new System.Drawing.Size(82, 23);
+            this.btCriarConta.Size = new System.Drawing.Size(70, 20);
             this.btCriarConta.TabIndex = 8;
             this.btCriarConta.Text = "Criar conta";
             this.btCriarConta.UseVisualStyleBackColor = true;
             this.btCriarConta.Click += new System.EventHandler(this.btCriarConta_Click);
             // 
-            // label5
+            // lblTitulo
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(186, 31);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(385, 20);
-            this.label5.TabIndex = 16;
-            this.label5.Text = "Sistema de Atendimento Remoto do Serviço de Saúde";
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblTitulo.Location = new System.Drawing.Point(159, 27);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(385, 20);
+            this.lblTitulo.TabIndex = 16;
+            this.lblTitulo.Text = "Sistema de Atendimento Remoto do Serviço de Saúde";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::WindowsApp.Properties.Resources.logosus;
-            this.pictureBox1.Location = new System.Drawing.Point(30, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(26, 10);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 59);
+            this.pictureBox1.Size = new System.Drawing.Size(101, 51);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(614, 277);
-            this.Controls.Add(this.label5);
+            this.ClientSize = new System.Drawing.Size(526, 240);
+            this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btCriarConta);
             this.Controls.Add(this.label1);
@@ -182,7 +184,7 @@
         private Label lblCriarConta;
         private Label label1;
         private Button btCriarConta;
-        private Label label5;
+        private Label lblTitulo;
         private PictureBox pictureBox1;
     }
 }
