@@ -1,8 +1,5 @@
-﻿using System;
-using Domain.Models;
-using Domain.Repository;
+﻿using Domain.Models;
 using Persistence.DataContext;
-using Persistence.Repository;
 
 namespace WindowsApp
 {
@@ -29,20 +26,27 @@ namespace WindowsApp
                         .FirstOrDefault();
 
                         verifyLoginErrors(paciente);
+                        MainPaForm main = new MainPaForm(paciente);
+                        Hide();
+                        main.Show();
                     }
                     else
                     {
                         var medico = context.Medicos
                         .Where(m => m.Email == tbEmail.Text)
                         .FirstOrDefault();
+
                         verifyLoginErrors(medico);
+                        MainMeForm main = new MainMeForm(medico);
+                        Hide();
+                        main.Show();
                     }
                 }
                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -50,11 +54,11 @@ namespace WindowsApp
         {
             if (usuario == null)
             {
-                MessageBox.Show("Usuário não foi encontrado.", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception("Usuário não foi encontrado.");
             }
             else if (usuario != null && usuario.Senha != tbSenha.Text)
             {
-                MessageBox.Show("Senha incorreta.", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                throw new Exception("Senha incorreta.");
             }
             else if (usuario.Senha == tbSenha.Text)
             {
@@ -80,7 +84,7 @@ namespace WindowsApp
 
         private void btCriarConta_Click(object sender, EventArgs e)
         {
-            TipoConta criarConta = new TipoConta();
+            TipoContaForm criarConta = new TipoContaForm();
 
             criarConta.Show();
             Hide();

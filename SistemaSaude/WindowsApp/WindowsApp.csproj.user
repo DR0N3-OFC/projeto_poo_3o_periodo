@@ -10,10 +10,19 @@
     <Compile Update="CadastroFormPa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ConsultasAgendadasMeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="TipoConta.cs">
+    <Compile Update="MainMeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="MainPaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TipoContaForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

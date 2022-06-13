@@ -38,7 +38,7 @@
                 throw new Exception("O nome não pode ser nulo ou vazio");
 
             if ((DataDeNascimento?.Date >= DateTime.Now.Date))
-                throw new Exception("A data de nascimento não pode ser igual a data atual");
+                throw new Exception("A data de nascimento não pode ser posterior ou igual à data atual");
 
             if (Telefone == null || Telefone.Trim().Length == 0)
                 Telefone = "Não informado";

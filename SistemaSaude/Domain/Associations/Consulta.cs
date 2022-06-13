@@ -17,19 +17,12 @@ namespace Domain.Models
         public virtual PacienteModel? Paciente { get; private set; }
         public virtual MedicoModel? Medico { get; private set; }
         public DateTime? Data { get; private set; }
-        public EnumEspecialidade? Especialidade { get; private set; }
         #endregion
 
         #region Constructors
-        public Consulta(DateTime? data, EnumEspecialidade? especialidade)
+        public Consulta(DateTime? data, Guid? pacienteModelID, Guid? medicoModelID)
         {
             Data = data;
-            Especialidade = especialidade;
-            ValidateData();
-        }
-
-        public Consulta(DateTime? data, EnumEspecialidade? especialidade, Guid? pacienteModelID, Guid? medicoModelID) : this(data, especialidade)
-        {
             PacienteModelID = pacienteModelID;
             MedicoModelID = medicoModelID;
             ValidateData();
@@ -48,9 +41,6 @@ namespace Domain.Models
         {
             if (Data == null)
                 throw new Exception("Data e hora não podem ser nulas");
-
-            if (Especialidade == null )
-                throw new Exception("Especialidade não pode ser nula");
         }
         #endregion
 

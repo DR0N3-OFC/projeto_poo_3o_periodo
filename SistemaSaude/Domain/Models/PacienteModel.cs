@@ -47,6 +47,11 @@ namespace Domain.Models
         {
             return 11 * (PacienteModelID == null ? 1 : PacienteModelID.GetHashCode());
         }
+
+        public override string ToString()
+        {
+            return $"{Nome}, {Idade} anos";
+        }
         #endregion
     }
 }

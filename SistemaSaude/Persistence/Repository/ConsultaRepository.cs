@@ -1,5 +1,6 @@
 ﻿using Domain.Models;
 using Domain.Repository;
+using Microsoft.EntityFrameworkCore;
 using Persistence.DataContext;
 
 namespace Persistence.Repository
@@ -34,7 +35,7 @@ namespace Persistence.Repository
 
         public IReadOnlyCollection<Consulta> ObterTodos()
         {
-            throw new NotImplementedException();
+            return _context.Consultas.AsNoTracking().Include(p => p.Paciente).Include(m => m.Medico)/*.OrderBy(e => e.Paciente.Nome)*/.ToList().AsReadOnly();
         }
 
         public void Remover(Consulta t)

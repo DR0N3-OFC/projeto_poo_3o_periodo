@@ -1,9 +1,9 @@
 ﻿namespace WindowsApp
 {
-    public partial class TipoConta : Form
+    public partial class TipoContaForm : Form
     {
         LoginForm login = new LoginForm();
-        public TipoConta()
+        public TipoContaForm()
         {
             InitializeComponent();
         }
