@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Persistence.DataContext;
 
@@ -11,9 +12,10 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    partial class EFDataContextModelSnapshot : ModelSnapshot
+    [Migration("20220614152324_IsAdmin")]
+    partial class IsAdmin
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -22,6 +22,14 @@ namespace Domain.Models
             Telefone = telefone;
             Cpf = cpf;
             Rg = rg;
+            IsAdmin = 0;
+            ValidateData();
+        }
+        public PacienteModel(string? email, string? senha) : base()
+        {
+            Email = email;
+            Senha = senha;
+            IsAdmin = 1;
             ValidateData();
         }
         #endregion

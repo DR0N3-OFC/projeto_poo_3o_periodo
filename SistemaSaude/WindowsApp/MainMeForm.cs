@@ -17,5 +17,10 @@ namespace WindowsApp
             Hide();
             consultas.Show();
         }
+
+        private void MainMeForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,26 +1,33 @@
-﻿namespace Domain.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Domain.Models
 {
     public class ReservaModel
     {
         #region Properties
         public Guid? ReservaID { get; private set; }
+        [ForeignKey("FK_TB_Remedios_TB_Reservas_ReservaID")]
+        public Guid? RemedioID { get; private set; }
+        [ForeignKey("FK_TB_Pacientes_TB_Reservas_ReservaID")]
+        public Guid? PacienteID { get; private set; }
         public DateTime? DataReserva { get; private set; }
-        private HashSet<Remedio>? _remedios;
+        public virtual Remedio? Remedio { get; private set; }
+        public virtual PacienteModel? Paciente { get; private set; }
         #endregion
 
         #region Constructor
-        public ReservaModel(Guid? reservaID = null, HashSet<Remedio>? remedios = null)
+        public ReservaModel(DateTime? dataReserva, Guid? remedioID, Guid? pacienteID)
         {
-            ReservaID = (reservaID == null) ? Guid.NewGuid() : reservaID;
-            DataReserva = DateTime.Now;
-            _remedios = (remedios == null) ? new HashSet<Remedio>() : remedios;
+            DataReserva = dataReserva;
+            RemedioID = remedioID;
+            PacienteID = pacienteID;
         }
         #endregion
 
         #region Methods
-        public void adicionarRemedio(Remedio remedio)
+        public void GerarID()
         {
-            _remedios?.Add(remedio);
+            ReservaID = Guid.NewGuid();
         }
         #endregion
 

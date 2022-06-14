@@ -1,6 +1,6 @@
 ﻿namespace WindowsApp
 {
-    partial class AgendamentoForm
+    partial class ReservaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.lblData = new System.Windows.Forms.Label();
@@ -70,21 +70,21 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 450);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dgvMedicos
             // 
             this.dgvMedicos.AllowUserToAddRows = false;
             this.dgvMedicos.AllowUserToDeleteRows = false;
             this.dgvMedicos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMedicos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMedicos, 3);
             this.dgvMedicos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -98,7 +98,6 @@
             this.dgvMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicos.Size = new System.Drawing.Size(828, 317);
             this.dgvMedicos.TabIndex = 3;
-            this.dgvMedicos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicos_RowEnter);
             // 
             // lblData
             // 
@@ -112,7 +111,7 @@
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(114, 30);
             this.lblData.TabIndex = 4;
-            this.lblData.Text = "Horário";
+            this.lblData.Text = "Data de Retirada";
             this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dtData
@@ -137,7 +136,7 @@
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(846, 20);
             this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Agendamento de Consulta";
+            this.lblTitulo.Text = "Reserva de Medicamentos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btAgendar
@@ -151,9 +150,8 @@
             this.btAgendar.Name = "btAgendar";
             this.btAgendar.Size = new System.Drawing.Size(421, 23);
             this.btAgendar.TabIndex = 6;
-            this.btAgendar.Text = "Agendar";
+            this.btAgendar.Text = "Reservar";
             this.btAgendar.UseVisualStyleBackColor = true;
-            this.btAgendar.Click += new System.EventHandler(this.btAgendar_Click);
             // 
             // cbEspecialidade
             // 
@@ -166,7 +164,6 @@
             this.cbEspecialidade.Name = "cbEspecialidade";
             this.cbEspecialidade.Size = new System.Drawing.Size(706, 23);
             this.cbEspecialidade.TabIndex = 2;
-            this.cbEspecialidade.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidade_SelectedIndexChanged);
             // 
             // btVoltar
             // 
@@ -180,7 +177,6 @@
             this.btVoltar.TabIndex = 7;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
             // lblEspecialidade
             // 
@@ -192,20 +188,17 @@
             this.lblEspecialidade.Name = "lblEspecialidade";
             this.lblEspecialidade.Size = new System.Drawing.Size(114, 17);
             this.lblEspecialidade.TabIndex = 1;
-            this.lblEspecialidade.Text = "Especialidade";
+            this.lblEspecialidade.Text = "Tipo";
             this.lblEspecialidade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // AgendamentoForm
+            // ReservaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.MaximizeBox = false;
-            this.Name = "AgendamentoForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AgendamentoForm";
+            this.Name = "ReservaForm";
+            this.Text = "ReservaForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
@@ -216,13 +209,13 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Label lblEspecialidade;
-        private ComboBox cbEspecialidade;
         private DataGridView dgvMedicos;
         private Label lblData;
         private DateTimePicker dtData;
         private Label lblTitulo;
         private Button btAgendar;
+        private ComboBox cbEspecialidade;
         private Button btVoltar;
+        private Label lblEspecialidade;
     }
 }

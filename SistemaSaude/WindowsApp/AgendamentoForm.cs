@@ -108,7 +108,7 @@ namespace WindowsApp
                 if (dtData.Value > consulta.Data?.AddMinutes(-15) && dtData.Value < consulta.Data)
                     throw new Exception("Este horário já possui agendamento. Por favor, escolha outro horário.");
 
-                if (dtData.Value < consulta.Data?.AddMinutes(29))
+                if (dtData.Value >= consulta.Data && dtData.Value < consulta.Data?.AddMinutes(29))
                     throw new Exception("Uma consulta já está marcada para este horário, agende um pouquinho mais tarde.");
             }
         }

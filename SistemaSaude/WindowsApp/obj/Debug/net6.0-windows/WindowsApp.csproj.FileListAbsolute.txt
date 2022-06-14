@@ -196,7 +196,6 @@ C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\Wind
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.CadastroFormPa.resources
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.LoginForm.resources
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.Properties.Resources.resources
-C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.TipoConta.resources
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.csproj.GenerateResource.cache
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.AssemblyInfoInputs.cache
@@ -211,3 +210,11 @@ C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\o
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.TipoContaForm.resources
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.ConsultasAgendadasMeForm.resources
 C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.MainMeForm.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.ConsultasAgendadasMeForm.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.MainMeForm.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.MainPaForm.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.TipoContaForm.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.AdminAdicionarRemedio.resources
+C:\Users\User\Downloads\Nova pasta\projeto_poo_3o_periodo-main\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.ReservaForm.resources
+C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.AdminAdicionarRemedio.resources
+C:\Users\Bruno\Documents\GitHub\projeto_poo_3o_periodo\SistemaSaude\WindowsApp\obj\Debug\net6.0-windows\WindowsApp.ReservaForm.resources

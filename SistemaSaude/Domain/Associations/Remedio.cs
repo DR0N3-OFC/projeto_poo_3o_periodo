@@ -12,13 +12,19 @@ namespace Domain.Models
         #endregion
 
         #region Constructor
-        public Remedio(string? nome, EnumRemedio? tipo, DateTime? validade, Guid? remedioID = null)
+        public Remedio(string? nome, EnumRemedio? tipo, DateTime? validade)
         {
-            RemedioID = (remedioID == null) ? Guid.NewGuid() : remedioID;
             Nome = nome;
             Tipo = tipo;
             Validade = validade;
             ValidateData();
+        }
+        #endregion
+
+        #region Methods
+        public void GerarID()
+        {
+            RemedioID = Guid.NewGuid();
         }
         #endregion
 
@@ -29,7 +35,7 @@ namespace Domain.Models
                 throw new Exception("Nome não pode ser nulo ou vazio");
 
             if (Tipo == null)
-                throw new Exception("Tipo não pode ser nulo ou vazio");
+                throw new Exception("Tipo não pode ser nulo");
 
             if (Validade == null)
                 throw new Exception("Data de validade não pode ser nula");

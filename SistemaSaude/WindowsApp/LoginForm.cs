@@ -1,14 +1,27 @@
 ﻿using Domain.Models;
+using Domain.Repository;
 using Persistence.DataContext;
+using Persistence.Repository;
 
 namespace WindowsApp
 {
     public partial class LoginForm : Form
     {
+        private readonly IRepository<PacienteModel> _pacienteModelRepository = new PacienteModelRepository(new EFDataContext());
+
         public LoginForm()
         {
             InitializeComponent();
+            createAdmin();
             lblTitulo.Select();
+        }
+        private void createAdmin()
+        {
+            var dataContext = new EFDataContext();
+            var admin = dataContext.Pacientes.Where(a => a.IsAdmin == 1).FirstOrDefault();
+
+            if (admin == null)
+                _pacienteModelRepository.Gravar(new("admin", "admin"));
         }
 
         private void btEntrar_Click(object sender, EventArgs e)
@@ -26,9 +39,19 @@ namespace WindowsApp
                         .FirstOrDefault();
 
                         verifyLoginErrors(paciente);
-                        MainPaForm main = new MainPaForm(paciente);
+
+                        if (paciente?.IsAdmin == 0)
+                        {
+                            MainPaForm main = new MainPaForm(paciente);
+                            main.Show();
+                        }
+                        else
+                        {
+                            MainAdForm main = new MainAdForm();
+                            main.Show();
+                        }
+
                         Hide();
-                        main.Show();
                     }
                     else
                     {
