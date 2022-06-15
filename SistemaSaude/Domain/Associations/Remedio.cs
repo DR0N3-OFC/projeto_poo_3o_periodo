@@ -1,22 +1,23 @@
-﻿using Domain.Enumerators;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Models
 {
     public class Remedio
     {
         #region Properties
+        [Key]
         public Guid? RemedioID { get; private set; }
         public string? Nome { get; private set; }
-        public EnumRemedio? Tipo { get; private set; }
+        public string? Tipo { get; private set; }
         public DateTime? Validade { get; private set; }
         #endregion
 
         #region Constructor
-        public Remedio(string? nome, EnumRemedio? tipo, DateTime? validade)
+        public Remedio(string? nome, string? tipo, DateTime? validade)
         {
             Nome = nome;
             Tipo = tipo;
-            Validade = validade;
+            Validade = validade?.Date;
             ValidateData();
         }
         #endregion

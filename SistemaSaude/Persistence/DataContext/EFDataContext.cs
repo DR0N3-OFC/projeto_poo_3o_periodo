@@ -10,6 +10,8 @@ namespace Persistence.DataContext
         public DbSet<MedicoModel>? Medicos { get; set; }
         public DbSet<Consulta>? Consultas { get; set; }
         public DbSet<Remedio>? Remedios { get; set; }
+        public DbSet<ReservaModel>? Reservas { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -18,6 +20,7 @@ namespace Persistence.DataContext
             modelBuilder.Entity<Endereco>().ToTable("TB_Enderecos");
             modelBuilder.Entity<Consulta>().ToTable("TB_Consultas");
             modelBuilder.Entity<Remedio>().ToTable("TB_Remedios");
+            modelBuilder.Entity<Remedio>().ToTable("TB_Reservas");
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

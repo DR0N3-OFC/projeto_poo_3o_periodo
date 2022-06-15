@@ -30,7 +30,6 @@ namespace WindowsApp
             loadEnumItemsWithDescription();
             lblTitulo.Select();
             dgvUpdate();
-            dgvMedicos.ClearSelection();
             dtData.CustomFormat = "'Data: ' dd/MM/yyyy ' Horário: ' HH:mm";
         }
         private void dgvUpdate()
@@ -130,6 +129,11 @@ namespace WindowsApp
             Hide();
             main.Show();
             main.Activate();
+        }
+
+        private void AgendamentoForm_Load(object sender, EventArgs e)
+        {
+            dgvMedicos.ClearSelection();
         }
     }
 }

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using Domain.Enumerators;
 
 namespace WindowsApp
 {
@@ -15,6 +7,33 @@ namespace WindowsApp
         public ReservaForm()
         {
             InitializeComponent();
+            initialFormatting();
+        }
+
+        private void initialFormatting()
+        {
+            loadEnumItemsWithDescription();
+            lblTitulo.Select();
+            dgvUpdate();
+        }
+
+        private void loadEnumItemsWithDescription()
+        {
+            foreach (EnumRemedio remedio in EnumMethods.EnumToList<EnumRemedio>())
+            {
+                cbTipo.Items.Add(remedio.GetDescription());
+            }
+            cbTipo.SelectedIndex = -1;
+        }
+
+        private void dgvUpdate()
+        {
+            dgvMedicamentos.DataSource = _remedioRepository.ObterTodos();
+            dgvMedicamentos.Columns[0].Visible = false;
+            dgvMedicamentos.ClearSelection();
+
+            btRemover.Enabled = false;
+            lblTitulo.Select();
         }
     }
 }

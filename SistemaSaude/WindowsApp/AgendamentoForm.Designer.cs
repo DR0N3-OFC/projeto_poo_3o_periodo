@@ -45,11 +45,11 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 5;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 122F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 307F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 407F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 349F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
             this.tableLayoutPanel1.Controls.Add(this.dgvMedicos, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblData, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtData, 2, 2);
@@ -60,16 +60,15 @@
             this.tableLayoutPanel1.Controls.Add(this.lblEspecialidade, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 323F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 26F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(854, 450);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 390);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // dgvMedicos
@@ -89,14 +88,13 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dgvMedicos, 3);
             this.dgvMedicos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMedicos.EnableHeadersVisualStyles = false;
-            this.dgvMedicos.Location = new System.Drawing.Point(12, 93);
-            this.dgvMedicos.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dgvMedicos.Location = new System.Drawing.Point(10, 81);
             this.dgvMedicos.Name = "dgvMedicos";
             this.dgvMedicos.ReadOnly = true;
             this.dgvMedicos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvMedicos.RowTemplate.Height = 25;
             this.dgvMedicos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMedicos.Size = new System.Drawing.Size(828, 317);
+            this.dgvMedicos.Size = new System.Drawing.Size(711, 274);
             this.dgvMedicos.TabIndex = 3;
             this.dgvMedicos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicos_RowEnter);
             // 
@@ -107,10 +105,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblData.Location = new System.Drawing.Point(12, 60);
-            this.lblData.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblData.Location = new System.Drawing.Point(10, 52);
             this.lblData.Name = "lblData";
-            this.lblData.Size = new System.Drawing.Size(114, 30);
+            this.lblData.Size = new System.Drawing.Size(99, 26);
             this.lblData.TabIndex = 4;
             this.lblData.Text = "Horário";
             this.lblData.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -120,10 +117,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dtData, 2);
             this.dtData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtData.Location = new System.Drawing.Point(134, 63);
-            this.dtData.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.dtData.Location = new System.Drawing.Point(115, 55);
             this.dtData.Name = "dtData";
-            this.dtData.Size = new System.Drawing.Size(706, 23);
+            this.dtData.Size = new System.Drawing.Size(606, 21);
             this.dtData.TabIndex = 5;
             // 
             // lblTitulo
@@ -132,10 +128,9 @@
             this.lblTitulo.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.lblTitulo, 5);
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblTitulo.Location = new System.Drawing.Point(4, 5);
-            this.lblTitulo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitulo.Location = new System.Drawing.Point(3, 3);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(846, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(727, 20);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Agendamento de Consulta";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -146,10 +141,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.btAgendar, 2);
-            this.btAgendar.Location = new System.Drawing.Point(12, 416);
-            this.btAgendar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btAgendar.Location = new System.Drawing.Point(10, 361);
             this.btAgendar.Name = "btAgendar";
-            this.btAgendar.Size = new System.Drawing.Size(421, 23);
+            this.btAgendar.Size = new System.Drawing.Size(362, 19);
             this.btAgendar.TabIndex = 6;
             this.btAgendar.Text = "Agendar";
             this.btAgendar.UseVisualStyleBackColor = true;
@@ -161,10 +155,9 @@
             this.tableLayoutPanel1.SetColumnSpan(this.cbEspecialidade, 2);
             this.cbEspecialidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEspecialidade.FormattingEnabled = true;
-            this.cbEspecialidade.Location = new System.Drawing.Point(134, 33);
-            this.cbEspecialidade.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbEspecialidade.Location = new System.Drawing.Point(115, 29);
             this.cbEspecialidade.Name = "cbEspecialidade";
-            this.cbEspecialidade.Size = new System.Drawing.Size(706, 23);
+            this.cbEspecialidade.Size = new System.Drawing.Size(606, 21);
             this.cbEspecialidade.TabIndex = 2;
             this.cbEspecialidade.SelectedIndexChanged += new System.EventHandler(this.cbEspecialidade_SelectedIndexChanged);
             // 
@@ -173,10 +166,9 @@
             this.btVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btVoltar.Location = new System.Drawing.Point(441, 416);
-            this.btVoltar.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.btVoltar.Location = new System.Drawing.Point(378, 361);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(399, 23);
+            this.btVoltar.Size = new System.Drawing.Size(343, 19);
             this.btVoltar.TabIndex = 7;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
@@ -187,25 +179,24 @@
             this.lblEspecialidade.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lblEspecialidade.AutoSize = true;
             this.lblEspecialidade.Font = new System.Drawing.Font("Segoe UI", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEspecialidade.Location = new System.Drawing.Point(12, 36);
-            this.lblEspecialidade.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEspecialidade.Location = new System.Drawing.Point(10, 30);
             this.lblEspecialidade.Name = "lblEspecialidade";
-            this.lblEspecialidade.Size = new System.Drawing.Size(114, 17);
+            this.lblEspecialidade.Size = new System.Drawing.Size(99, 17);
             this.lblEspecialidade.TabIndex = 1;
             this.lblEspecialidade.Text = "Especialidade";
             this.lblEspecialidade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // AgendamentoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(854, 450);
+            this.ClientSize = new System.Drawing.Size(732, 390);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "AgendamentoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AgendamentoForm";
+            this.Load += new System.EventHandler(this.AgendamentoForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();

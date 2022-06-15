@@ -12,8 +12,8 @@ using Persistence.DataContext;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(EFDataContext))]
-    [Migration("20220607144013_UpdateMedicoExclusions")]
-    partial class UpdateMedicoExclusions
+    [Migration("20220615011733_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,9 +32,6 @@ namespace Persistence.Migrations
 
                     b.Property<DateTime?>("Data")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("Especialidade")
-                        .HasColumnType("int");
 
                     b.Property<Guid?>("MedicoModelID")
                         .HasColumnType("uniqueidentifier");
@@ -108,6 +105,9 @@ namespace Persistence.Migrations
                     b.Property<int?>("Especialidade")
                         .HasColumnType("int");
 
+                    b.Property<int>("IsAdmin")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
@@ -140,6 +140,9 @@ namespace Persistence.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("IsAdmin")
+                        .HasColumnType("int");
+
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
@@ -155,6 +158,26 @@ namespace Persistence.Migrations
                     b.HasKey("PacienteModelID");
 
                     b.ToTable("TB_Pacientes", (string)null);
+                });
+
+            modelBuilder.Entity("Domain.Models.Remedio", b =>
+                {
+                    b.Property<Guid?>("RemedioID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("Validade")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("RemedioID");
+
+                    b.ToTable("TB_Remedios", (string)null);
                 });
 
             modelBuilder.Entity("Domain.Models.Consulta", b =>

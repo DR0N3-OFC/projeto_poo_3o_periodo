@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class CreateDB : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -23,7 +23,7 @@ namespace Persistence.Migrations
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Rg = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cpf = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountType = table.Column<int>(type: "int", nullable: false)
+                    IsAdmin = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace Persistence.Migrations
                     Telefone = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Rg = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Cpf = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    AccountType = table.Column<int>(type: "int", nullable: false)
+                    IsAdmin = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,18 +50,36 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "TB_Remedios",
+                columns: table => new
+                {
+                    RemedioID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Tipo = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Validade = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_Remedios", x => x.RemedioID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "TB_Consultas",
                 columns: table => new
                 {
                     ConsultaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    Data = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    Especialidade = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Medico = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    PacienteModelID = table.Column<Guid>(type: "uniqueidentifier", nullable: true)
+                    PacienteModelID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    MedicoModelID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Data = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TB_Consultas", x => x.ConsultaID);
+                    table.ForeignKey(
+                        name: "FK_TB_Consultas_TB_Medicos_MedicoModelID",
+                        column: x => x.MedicoModelID,
+                        principalTable: "TB_Medicos",
+                        principalColumn: "MedicoModelID");
                     table.ForeignKey(
                         name: "FK_TB_Consultas_TB_Pacientes_PacienteModelID",
                         column: x => x.PacienteModelID,
@@ -93,6 +111,11 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_TB_Consultas_MedicoModelID",
+                table: "TB_Consultas",
+                column: "MedicoModelID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_TB_Consultas_PacienteModelID",
                 table: "TB_Consultas",
                 column: "PacienteModelID");
@@ -112,6 +135,9 @@ namespace Persistence.Migrations
 
             migrationBuilder.DropTable(
                 name: "TB_Enderecos");
+
+            migrationBuilder.DropTable(
+                name: "TB_Remedios");
 
             migrationBuilder.DropTable(
                 name: "TB_Medicos");

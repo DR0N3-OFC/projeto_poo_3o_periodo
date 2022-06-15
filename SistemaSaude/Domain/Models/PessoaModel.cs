@@ -28,19 +28,19 @@
             if (Senha == null || Senha.Trim().Length == 0)
                 throw new Exception("A senha não pode ser nula ou vazia");
 
-            if (Nome == null || Nome.Trim().Length == 0 && IsAdmin != 1)
+            if ((Nome == null || Nome.Trim().Length == 0) && IsAdmin != 1)
                 throw new Exception("O nome não pode ser nulo ou vazio");
 
             if ((DataDeNascimento?.Date >= DateTime.Now.Date) && IsAdmin != 1)
                 throw new Exception("A data de nascimento não pode ser posterior ou igual à data atual");
 
-            if (Telefone == null || Telefone.Trim().Length == 0 && IsAdmin != 1)
+            if ((Telefone == null || Telefone.Trim().Length == 0) && IsAdmin != 1)
                 Telefone = "Não informado";
 
-            if (Rg == null || Rg.Trim().Length == 0 && IsAdmin != 1)
+            if ((Rg == null || Rg.Trim().Length == 0) && IsAdmin != 1)
                 throw new Exception("O RG não pode ser nulo ou vazio");
 
-            if (Cpf == null || Cpf.Trim().Length == 0 && IsAdmin != 1)
+            if ((Cpf == null || Cpf.Trim().Length == 0) && IsAdmin != 1)
                 throw new Exception("O CPF não pode ser nulo ou vazio");
         }
         #endregion

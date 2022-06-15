@@ -18,7 +18,7 @@ namespace Domain.Models
         #region Constructor
         public ReservaModel(DateTime? dataReserva, Guid? remedioID, Guid? pacienteID)
         {
-            DataReserva = dataReserva;
+            DataReserva = dataReserva?.Date;
             RemedioID = remedioID;
             PacienteID = pacienteID;
         }

@@ -167,8 +167,8 @@ namespace Persistence.Migrations
                     b.Property<string>("Nome")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Tipo")
-                        .HasColumnType("int");
+                    b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("Validade")
                         .HasColumnType("datetime2");

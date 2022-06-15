@@ -29,7 +29,7 @@ namespace Persistence.Repository
 
         public Remedio ObterPorID(Guid? id)
         {
-            throw new NotImplementedException();
+            return _context.Remedios.Where(i => i.RemedioID == id).FirstOrDefault();
         }
 
         public IReadOnlyCollection<Remedio> ObterTodos()
