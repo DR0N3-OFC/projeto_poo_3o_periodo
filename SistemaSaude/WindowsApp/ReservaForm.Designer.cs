@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMedicamentos = new System.Windows.Forms.DataGridView();
             this.lblData = new System.Windows.Forms.Label();
             this.dtData = new System.Windows.Forms.DateTimePicker();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btAgendar = new System.Windows.Forms.Button();
+            this.btReservar = new System.Windows.Forms.Button();
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.btVoltar = new System.Windows.Forms.Button();
             this.lblEspecialidade = new System.Windows.Forms.Label();
             this.dgvReservados = new System.Windows.Forms.DataGridView();
-            this.lblMedReservados = new System.Windows.Forms.Label();
+            this.lblReservas = new System.Windows.Forms.Label();
             this.btCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).BeginInit();
@@ -61,12 +62,12 @@
             this.tableLayoutPanel1.Controls.Add(this.lblData, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtData, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblTitulo, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btAgendar, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btReservar, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.cbTipo, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btVoltar, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblEspecialidade, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.dgvReservados, 5, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lblMedReservados, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lblReservas, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btCancelar, 5, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
@@ -106,6 +107,7 @@
             this.dgvMedicamentos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMedicamentos.Size = new System.Drawing.Size(711, 274);
             this.dgvMedicamentos.TabIndex = 3;
+            this.dgvMedicamentos.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicamentos_RowEnter);
             // 
             // lblData
             // 
@@ -144,18 +146,19 @@
             this.lblTitulo.Text = "Reserva de Medicamentos";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btAgendar
+            // btReservar
             // 
-            this.btAgendar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btReservar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tableLayoutPanel1.SetColumnSpan(this.btAgendar, 2);
-            this.btAgendar.Location = new System.Drawing.Point(10, 361);
-            this.btAgendar.Name = "btAgendar";
-            this.btAgendar.Size = new System.Drawing.Size(362, 19);
-            this.btAgendar.TabIndex = 6;
-            this.btAgendar.Text = "Reservar";
-            this.btAgendar.UseVisualStyleBackColor = true;
+            this.tableLayoutPanel1.SetColumnSpan(this.btReservar, 2);
+            this.btReservar.Location = new System.Drawing.Point(10, 361);
+            this.btReservar.Name = "btReservar";
+            this.btReservar.Size = new System.Drawing.Size(362, 19);
+            this.btReservar.TabIndex = 6;
+            this.btReservar.Text = "Reservar";
+            this.btReservar.UseVisualStyleBackColor = true;
+            this.btReservar.Click += new System.EventHandler(this.btReservar_Click);
             // 
             // cbTipo
             // 
@@ -167,6 +170,7 @@
             this.cbTipo.Name = "cbTipo";
             this.cbTipo.Size = new System.Drawing.Size(606, 21);
             this.cbTipo.TabIndex = 2;
+            this.cbTipo.SelectedValueChanged += new System.EventHandler(this.cbTipo_SelectedValueChanged);
             // 
             // btVoltar
             // 
@@ -179,6 +183,7 @@
             this.btVoltar.TabIndex = 7;
             this.btVoltar.Text = "Voltar";
             this.btVoltar.UseVisualStyleBackColor = true;
+            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
             // 
             // lblEspecialidade
             // 
@@ -196,6 +201,15 @@
             // 
             this.dgvReservados.AllowUserToAddRows = false;
             this.dgvReservados.AllowUserToDeleteRows = false;
+            this.dgvReservados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvReservados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvReservados.Location = new System.Drawing.Point(734, 29);
@@ -203,20 +217,22 @@
             this.dgvReservados.ReadOnly = true;
             this.tableLayoutPanel1.SetRowSpan(this.dgvReservados, 3);
             this.dgvReservados.RowTemplate.Height = 23;
+            this.dgvReservados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvReservados.Size = new System.Drawing.Size(294, 326);
             this.dgvReservados.TabIndex = 8;
+            this.dgvReservados.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReservados_RowEnter);
             // 
-            // lblMedReservados
+            // lblReservas
             // 
-            this.lblMedReservados.AutoSize = true;
-            this.lblMedReservados.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblMedReservados.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblMedReservados.Location = new System.Drawing.Point(734, 0);
-            this.lblMedReservados.Name = "lblMedReservados";
-            this.lblMedReservados.Size = new System.Drawing.Size(294, 26);
-            this.lblMedReservados.TabIndex = 9;
-            this.lblMedReservados.Text = "Medicamentos Reservados";
-            this.lblMedReservados.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblReservas.AutoSize = true;
+            this.lblReservas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblReservas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblReservas.Location = new System.Drawing.Point(734, 0);
+            this.lblReservas.Name = "lblReservas";
+            this.lblReservas.Size = new System.Drawing.Size(294, 26);
+            this.lblReservas.TabIndex = 9;
+            this.lblReservas.Text = "Reservas";
+            this.lblReservas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btCancelar
             // 
@@ -227,8 +243,9 @@
             this.btCancelar.Name = "btCancelar";
             this.btCancelar.Size = new System.Drawing.Size(294, 19);
             this.btCancelar.TabIndex = 10;
-            this.btCancelar.Text = "Cancelar";
+            this.btCancelar.Text = "Cancelar Reserva";
             this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
             // 
             // ReservaForm
             // 
@@ -236,8 +253,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 386);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "ReservaForm";
-            this.Text = "ReservaForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Reservas";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ReservaForm_FormClosed);
+            this.Load += new System.EventHandler(this.ReservaForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicamentos)).EndInit();
@@ -253,12 +275,12 @@
         private Label lblData;
         private DateTimePicker dtData;
         private Label lblTitulo;
-        private Button btAgendar;
+        private Button btReservar;
         private ComboBox cbTipo;
         private Button btVoltar;
         private Label lblEspecialidade;
         private DataGridView dgvReservados;
-        private Label lblMedReservados;
         private Button btCancelar;
+        private Label lblReservas;
     }
 }

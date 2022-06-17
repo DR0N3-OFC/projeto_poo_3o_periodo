@@ -30,7 +30,7 @@ namespace Persistence.Repository
 
         public Consulta ObterPorID(Guid? id)
         {
-            throw new NotImplementedException();
+            return _context.Consultas.Where(c => c.ConsultaID == id).FirstOrDefault();
         }
 
         public IReadOnlyCollection<Consulta> ObterTodos()

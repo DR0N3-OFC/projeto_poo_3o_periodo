@@ -48,5 +48,13 @@ namespace Domain.Models
                 throw new Exception("O CRM não pode ser nulo ou vazio");
         }
         #endregion
+
+        #region Overrides
+        public override string ToString()
+        {
+            return $"{Nome}, {Especialidade.GetDescription()}";
+        }
+
+        #endregion
     }
 }

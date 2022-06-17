@@ -20,7 +20,7 @@ namespace Persistence.DataContext
             modelBuilder.Entity<Endereco>().ToTable("TB_Enderecos");
             modelBuilder.Entity<Consulta>().ToTable("TB_Consultas");
             modelBuilder.Entity<Remedio>().ToTable("TB_Remedios");
-            modelBuilder.Entity<Remedio>().ToTable("TB_Reservas");
+            modelBuilder.Entity<ReservaModel>().ToTable("TB_Reservas");
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

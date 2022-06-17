@@ -59,6 +59,11 @@ namespace Domain.Models
         {
             return 11 * (RemedioID == null ? 1 : RemedioID.GetHashCode());
         }
+
+        public override string ToString()
+        {
+            return Nome;
+        }
         #endregion
     }
 }

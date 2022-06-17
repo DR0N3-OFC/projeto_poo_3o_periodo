@@ -9,11 +9,10 @@ namespace WindowsApp
     public partial class AdminCatalogoForm : Form
     {
         private readonly IRepository<Remedio> _remedioRepository;
-        Guid? _remedioID;
+        private Guid? _remedioID;
         public AdminCatalogoForm()
         {
-            var dataContext = new EFDataContext();
-            _remedioRepository = new RemedioRepository(dataContext);
+            _remedioRepository = new RemedioRepository(new EFDataContext());
 
             InitializeComponent();
             initialFormatting();
@@ -122,18 +121,19 @@ namespace WindowsApp
 
         private void btRemover_Click(object sender, EventArgs e)
         {
-            if (dgvMedicamentos.SelectedRows != null)
-            {
-                var remedio = _remedioRepository.ObterPorID(_remedioID);
-                _remedioRepository.Remover(remedio);
+            var remedio = _remedioRepository.ObterPorID(_remedioID);
+            _remedioRepository.Remover(remedio);
 
-                dgvUpdate();
-                MessageBox.Show("Remédio removido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecione um medicamento.", "ERRO!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            dgvUpdate();
+            MessageBox.Show("Remédio removido com sucesso!", "Sucesso!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void AdminCatalogoForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            MainAdForm main = new();
+            main.Show();
+            main.Activate();
+            Hide();
         }
     }
 }

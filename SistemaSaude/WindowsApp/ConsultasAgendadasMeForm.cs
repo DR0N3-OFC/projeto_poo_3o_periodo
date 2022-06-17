@@ -60,5 +60,12 @@ namespace WindowsApp
             main.Show();
             main.Activate();
         }
+
+        private void ConsultasAgendadasMeForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            var main = new MainMeForm(_medico);
+            main.Show();
+            main.Activate();
+        }
     }
 }

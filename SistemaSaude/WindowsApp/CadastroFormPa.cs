@@ -7,7 +7,6 @@ namespace WindowsApp
 {
     public partial class CadastroFormPa : Form
     {
-        LoginForm login = new LoginForm();
         private readonly IRepository<PacienteModel> _pacienteModelRepository;
         private readonly IRepository<Endereco> _enderecoRepository;
         public CadastroFormPa()
@@ -47,26 +46,29 @@ namespace WindowsApp
                        tbRG?.Text.Trim()
                        );
 
+                emailValidation(paciente.Email);
                 _pacienteModelRepository.Gravar(paciente);
 
                 _enderecoRepository.Gravar(new Endereco(tbRua?.Text.Trim(), tbNumero?.Text.Trim(), tbBairro?.Text.Trim(), tbCidade?.Text.Trim(), tbEstado?.Text.Trim(), tbCEP?.Text.Trim(), paciente.PacienteModelID));
                 MessageBox.Show("Cadastro realizado com êxito!", "Cadastro realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                closeForm();
+                Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 InCaseOfExceptionStyle();
-                MessageBox.Show("Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                MessageBox.Show(ex.Message == "1" ? "E-mail já cadastrado!" : "Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void closeForm()
+        private void emailValidation(string? email)
         {
-            login.SendToBack();
-            login.Hide();
-            Close();
-        }
+            var emailExistente = _pacienteModelRepository.ObterTodos().Where(e => e.Email == email).ToList();
 
+            if (emailExistente.Count > 0)
+            {
+                throw new Exception("1");
+            }
+        }
         private void InCaseOfExceptionStyle()
         {
             #region Personal Data Style
@@ -111,8 +113,9 @@ namespace WindowsApp
             #endregion
         }
 
-        private void CadastroFormPa_Deactivate(object sender, EventArgs e)
+        private void CadastroFormPa_FormClosed(object sender, FormClosedEventArgs e)
         {
+            LoginForm login = new ();
             login.Show();
             login.Activate();
         }

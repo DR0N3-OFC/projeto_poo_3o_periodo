@@ -8,7 +8,6 @@ namespace WindowsApp
 {
     public partial class CadastroFormMe : Form
     {
-        LoginForm login = new LoginForm();
         private readonly IRepository<MedicoModel> _medicoModelRepository;
         public CadastroFormMe()
         {
@@ -57,22 +56,27 @@ namespace WindowsApp
                        tbRG?.Text
                        );
 
+                emailValidation(medico.Email);
                 _medicoModelRepository.Gravar(medico);
+
                 MessageBox.Show("Cadastro realizado com êxito!", "Cadastro realizado!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                closeForm();
+                Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 InCaseOfExceptionStyle();
-                MessageBox.Show("Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message == "1" ? "E-mail já cadastrado!" : "Erro no cadastro!", "OPS!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void closeForm()
+        private void emailValidation(string? email)
         {
-            login.SendToBack();
-            login.Hide();
-            Close();
+            var emailExistente = _medicoModelRepository.ObterTodos().Where(e => e.Email == email).ToList();
+
+            if (emailExistente.Count > 0)
+            {
+                throw new Exception("1");
+            }
         }
 
         private void InCaseOfExceptionStyle()
@@ -86,6 +90,9 @@ namespace WindowsApp
 
             if (tbNome.Text == null || tbNome.Text.Trim().Length == 0) tbNome.BackColor = Color.RosyBrown;
             else tbNome.BackColor = Color.White;
+
+            if ((dtDataDeNascimento.Value.Date >= DateTime.Now.Date)) lblDtNascimento.ForeColor = Color.IndianRed;
+            else lblDtNascimento.ForeColor = Color.Black;
 
             if (tbTelefone.Text == null || tbTelefone.Text.Trim().Length == 0) tbTelefone.Text = "(Não informado)";
 
@@ -105,8 +112,9 @@ namespace WindowsApp
             #endregion
         }
 
-        private void CadastroFormMe_Deactivate(object sender, EventArgs e)
+        private void CadastroFormMe_FormClosed(object sender, FormClosedEventArgs e)
         {
+            LoginForm login = new ();
             login.Show();
             login.Activate();
         }

@@ -178,6 +178,30 @@ namespace Persistence.Migrations
                     b.ToTable("TB_Remedios", (string)null);
                 });
 
+            modelBuilder.Entity("Domain.Models.ReservaModel", b =>
+                {
+                    b.Property<Guid?>("ReservaID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime?>("DataReserva")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid?>("PacienteID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("RemedioID")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("ReservaID");
+
+                    b.HasIndex("PacienteID");
+
+                    b.HasIndex("RemedioID");
+
+                    b.ToTable("TB_Reservas", (string)null);
+                });
+
             modelBuilder.Entity("Domain.Models.Consulta", b =>
                 {
                     b.HasOne("Domain.Models.MedicoModel", "Medico")
@@ -202,6 +226,21 @@ namespace Persistence.Migrations
                     b.Navigation("Paciente");
                 });
 
+            modelBuilder.Entity("Domain.Models.ReservaModel", b =>
+                {
+                    b.HasOne("Domain.Models.PacienteModel", "Paciente")
+                        .WithMany("Reservas")
+                        .HasForeignKey("PacienteID");
+
+                    b.HasOne("Domain.Models.Remedio", "Remedio")
+                        .WithMany()
+                        .HasForeignKey("RemedioID");
+
+                    b.Navigation("Paciente");
+
+                    b.Navigation("Remedio");
+                });
+
             modelBuilder.Entity("Domain.Models.MedicoModel", b =>
                 {
                     b.Navigation("Consultas");
@@ -212,6 +251,8 @@ namespace Persistence.Migrations
                     b.Navigation("Consultas");
 
                     b.Navigation("Endereco");
+
+                    b.Navigation("Reservas");
                 });
 #pragma warning restore 612, 618
         }

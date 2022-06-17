@@ -39,6 +39,11 @@ namespace Persistence.Repository
 
         public void Remover(Remedio t)
         {
+            var reservas = _context.Reservas.Where(r => r.RemedioID == t.RemedioID).ToList();
+            foreach(ReservaModel r in reservas)
+            {
+                _context.Reservas.Remove(r);
+            }
             _context.Remedios.Remove(t);
             _context.SaveChanges();
         }

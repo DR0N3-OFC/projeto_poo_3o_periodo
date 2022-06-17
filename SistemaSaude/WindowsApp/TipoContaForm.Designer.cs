@@ -89,7 +89,7 @@
             this.btSouPaciente.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btSouPaciente.Location = new System.Drawing.Point(150, 240);
             this.btSouPaciente.Name = "btSouPaciente";
-            this.btSouPaciente.Size = new System.Drawing.Size(123, 20);
+            this.btSouPaciente.Size = new System.Drawing.Size(80, 20);
             this.btSouPaciente.TabIndex = 5;
             this.btSouPaciente.Text = "Sou paciente";
             this.btSouPaciente.UseVisualStyleBackColor = true;
@@ -194,10 +194,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblPaciente);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TipoContaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TipoConta";
-            this.Deactivate += new System.EventHandler(this.TipoConta_Deactivate);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.TipoContaForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

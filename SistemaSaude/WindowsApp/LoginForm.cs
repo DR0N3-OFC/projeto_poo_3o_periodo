@@ -13,8 +13,15 @@ namespace WindowsApp
         {
             InitializeComponent();
             createAdmin();
+            initialFormattingPasswordBox();
             lblTitulo.Select();
         }
+
+        private void initialFormattingPasswordBox()
+        {
+            tbSenha.PasswordChar = '*';
+        }
+
         private void createAdmin()
         {
             var dataContext = new EFDataContext();
@@ -111,6 +118,11 @@ namespace WindowsApp
 
             criarConta.Show();
             Hide();
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

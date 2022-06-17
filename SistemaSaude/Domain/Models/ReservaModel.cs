@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Models
 {
     public class ReservaModel
     {
         #region Properties
+        [Key]
         public Guid? ReservaID { get; private set; }
         [ForeignKey("FK_TB_Remedios_TB_Reservas_ReservaID")]
         public Guid? RemedioID { get; private set; }

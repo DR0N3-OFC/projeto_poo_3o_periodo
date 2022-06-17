@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvMedicos = new System.Windows.Forms.DataGridView();
             this.lblData = new System.Windows.Forms.Label();
@@ -38,18 +39,25 @@
             this.cbEspecialidade = new System.Windows.Forms.ComboBox();
             this.btVoltar = new System.Windows.Forms.Button();
             this.lblEspecialidade = new System.Windows.Forms.Label();
+            this.lblConsultasAgendadas = new System.Windows.Forms.Label();
+            this.dgvAgendadas = new System.Windows.Forms.DataGridView();
+            this.btCancelar = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendadas)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 5;
+            this.tableLayoutPanel1.ColumnCount = 8;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 105F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 263F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 349F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 9F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 300F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 7F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.dgvMedicos, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblData, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.dtData, 2, 2);
@@ -58,6 +66,9 @@
             this.tableLayoutPanel1.Controls.Add(this.cbEspecialidade, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.btVoltar, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.lblEspecialidade, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.lblConsultasAgendadas, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.dgvAgendadas, 5, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btCancelar, 5, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -68,7 +79,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 280F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 3F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(732, 390);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1040, 390);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // dgvMedicos
@@ -130,7 +141,7 @@
             this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTitulo.Location = new System.Drawing.Point(3, 3);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(727, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(725, 20);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Agendamento de Consulta";
             this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,20 +197,74 @@
             this.lblEspecialidade.Text = "Especialidade";
             this.lblEspecialidade.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblConsultasAgendadas
+            // 
+            this.lblConsultasAgendadas.AutoSize = true;
+            this.lblConsultasAgendadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblConsultasAgendadas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblConsultasAgendadas.Location = new System.Drawing.Point(734, 0);
+            this.lblConsultasAgendadas.Name = "lblConsultasAgendadas";
+            this.lblConsultasAgendadas.Size = new System.Drawing.Size(294, 26);
+            this.lblConsultasAgendadas.TabIndex = 8;
+            this.lblConsultasAgendadas.Text = "Consultas Agendadas";
+            this.lblConsultasAgendadas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dgvAgendadas
+            // 
+            this.dgvAgendadas.AllowUserToAddRows = false;
+            this.dgvAgendadas.AllowUserToDeleteRows = false;
+            this.dgvAgendadas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAgendadas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAgendadas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvAgendadas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvAgendadas.Location = new System.Drawing.Point(734, 29);
+            this.dgvAgendadas.Name = "dgvAgendadas";
+            this.dgvAgendadas.ReadOnly = true;
+            this.tableLayoutPanel1.SetRowSpan(this.dgvAgendadas, 3);
+            this.dgvAgendadas.RowTemplate.Height = 23;
+            this.dgvAgendadas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAgendadas.Size = new System.Drawing.Size(294, 326);
+            this.dgvAgendadas.TabIndex = 9;
+            this.dgvAgendadas.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgendadas_RowEnter);
+            // 
+            // btCancelar
+            // 
+            this.btCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btCancelar.Location = new System.Drawing.Point(734, 361);
+            this.btCancelar.Name = "btCancelar";
+            this.btCancelar.Size = new System.Drawing.Size(294, 19);
+            this.btCancelar.TabIndex = 10;
+            this.btCancelar.Text = "Cancelar Consulta";
+            this.btCancelar.UseVisualStyleBackColor = true;
+            this.btCancelar.Click += new System.EventHandler(this.btCancelar_Click);
+            // 
             // AgendamentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 390);
+            this.ClientSize = new System.Drawing.Size(1040, 390);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "AgendamentoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AgendamentoForm";
+            this.Text = "Área de Agendamentos";
+            this.Deactivate += new System.EventHandler(this.AgendamentoForm_Deactivate);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AgendamentoForm_FormClosed);
             this.Load += new System.EventHandler(this.AgendamentoForm_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAgendadas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +280,8 @@
         private Label lblTitulo;
         private Button btAgendar;
         private Button btVoltar;
+        private Label lblConsultasAgendadas;
+        private DataGridView dgvAgendadas;
+        private Button btCancelar;
     }
 }

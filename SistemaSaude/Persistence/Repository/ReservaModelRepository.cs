@@ -34,7 +34,7 @@ namespace Persistence.Repository
 
         public IReadOnlyCollection<ReservaModel> ObterTodos()
         {
-            return _context.Reservas.AsNoTracking().Include(p => p.Paciente).Include(r  => r.Remedio).OrderBy(p => p.DataReserva).ToList().AsReadOnly();
+            return _context.Reservas.AsNoTracking().Include(p => p.Paciente).Include(r => r.Remedio).OrderBy(p => p.DataReserva).ToList().AsReadOnly();
         }
 
         public void Remover(ReservaModel t)

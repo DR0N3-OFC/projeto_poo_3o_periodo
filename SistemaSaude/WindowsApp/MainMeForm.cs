@@ -18,9 +18,11 @@ namespace WindowsApp
             consultas.Show();
         }
 
-        private void MainMeForm_Load(object sender, EventArgs e)
+        private void MainMeForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-
+            LoginForm login = new();
+            login.Show();
+            login.Activate();
         }
     }
 }

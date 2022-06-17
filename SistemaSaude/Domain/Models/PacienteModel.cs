@@ -10,6 +10,7 @@ namespace Domain.Models
         public Guid? PacienteModelID { get; private set; }
         public Endereco? Endereco { get; private set; }
         public virtual IList<Consulta>? Consultas { get; private set; }
+        public virtual IList<ReservaModel>? Reservas { get; private set; }
         #endregion
 
         #region Constructor

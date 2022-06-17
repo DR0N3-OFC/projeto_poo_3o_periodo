@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class _1 : Migration
+    public partial class _2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -110,6 +110,30 @@ namespace Persistence.Migrations
                         principalColumn: "PacienteModelID");
                 });
 
+            migrationBuilder.CreateTable(
+                name: "TB_Reservas",
+                columns: table => new
+                {
+                    ReservaID = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RemedioID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    PacienteID = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    DataReserva = table.Column<DateTime>(type: "datetime2", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TB_Reservas", x => x.ReservaID);
+                    table.ForeignKey(
+                        name: "FK_TB_Reservas_TB_Pacientes_PacienteID",
+                        column: x => x.PacienteID,
+                        principalTable: "TB_Pacientes",
+                        principalColumn: "PacienteModelID");
+                    table.ForeignKey(
+                        name: "FK_TB_Reservas_TB_Remedios_RemedioID",
+                        column: x => x.RemedioID,
+                        principalTable: "TB_Remedios",
+                        principalColumn: "RemedioID");
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_TB_Consultas_MedicoModelID",
                 table: "TB_Consultas",
@@ -126,6 +150,16 @@ namespace Persistence.Migrations
                 column: "PacienteModelID",
                 unique: true,
                 filter: "[PacienteModelID] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_Reservas_PacienteID",
+                table: "TB_Reservas",
+                column: "PacienteID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TB_Reservas_RemedioID",
+                table: "TB_Reservas",
+                column: "RemedioID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -137,13 +171,16 @@ namespace Persistence.Migrations
                 name: "TB_Enderecos");
 
             migrationBuilder.DropTable(
-                name: "TB_Remedios");
+                name: "TB_Reservas");
 
             migrationBuilder.DropTable(
                 name: "TB_Medicos");
 
             migrationBuilder.DropTable(
                 name: "TB_Pacientes");
+
+            migrationBuilder.DropTable(
+                name: "TB_Remedios");
         }
     }
 }

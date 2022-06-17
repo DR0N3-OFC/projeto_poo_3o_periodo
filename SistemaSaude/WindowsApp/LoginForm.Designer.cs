@@ -47,7 +47,7 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Location = new System.Drawing.Point(291, 69);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(41, 15);
+            this.lblEmail.Size = new System.Drawing.Size(35, 13);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "E-mail";
             // 
@@ -56,7 +56,7 @@
             this.tbEmail.Location = new System.Drawing.Point(309, 93);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.PlaceholderText = "Seu e-mail";
-            this.tbEmail.Size = new System.Drawing.Size(196, 23);
+            this.tbEmail.Size = new System.Drawing.Size(196, 21);
             this.tbEmail.TabIndex = 1;
             // 
             // tbSenha
@@ -64,7 +64,7 @@
             this.tbSenha.Location = new System.Drawing.Point(309, 158);
             this.tbSenha.Name = "tbSenha";
             this.tbSenha.PlaceholderText = "Sua senha";
-            this.tbSenha.Size = new System.Drawing.Size(196, 23);
+            this.tbSenha.Size = new System.Drawing.Size(196, 21);
             this.tbSenha.TabIndex = 3;
             // 
             // lblSenha
@@ -72,7 +72,7 @@
             this.lblSenha.AutoSize = true;
             this.lblSenha.Location = new System.Drawing.Point(291, 134);
             this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(39, 15);
+            this.lblSenha.Size = new System.Drawing.Size(37, 13);
             this.lblSenha.TabIndex = 2;
             this.lblSenha.Text = "Senha";
             // 
@@ -91,7 +91,7 @@
             this.cbSouMedico.AutoSize = true;
             this.cbSouMedico.Location = new System.Drawing.Point(309, 201);
             this.cbSouMedico.Name = "cbSouMedico";
-            this.cbSouMedico.Size = new System.Drawing.Size(89, 19);
+            this.cbSouMedico.Size = new System.Drawing.Size(80, 17);
             this.cbSouMedico.TabIndex = 5;
             this.cbSouMedico.Text = "Sou médico";
             this.cbSouMedico.UseVisualStyleBackColor = true;
@@ -149,8 +149,7 @@
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(526, 240);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.pictureBox1);
@@ -163,10 +162,12 @@
             this.Controls.Add(this.lblSenha);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.lblEmail);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
+            this.Text = "Sistema Único de Saúde - Login";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LoginForm_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
